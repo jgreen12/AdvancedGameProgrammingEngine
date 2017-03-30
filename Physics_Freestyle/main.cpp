@@ -5,7 +5,6 @@
 World* world;
 
 
-
 int main(void)
 {
 	dInitODE();
