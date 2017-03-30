@@ -4,6 +4,14 @@
 //Collaboration with: 
 #include <string>
 #include <vector>
+
+//Physics Headers
+#include "vector.h"
+#include "body.h"
+#include "world.h"
+
+#include <ode/ode.h>
+
 using namespace std;
 
 //GameObject class to keep track of game objects, may need to make the class abstract?
@@ -13,6 +21,8 @@ using namespace std;
 
 class GameObject {
 private:
+	
+	Body* rigidBody;
 
 protected:
 	//rudimentary method of tracking position until we link up on physics
@@ -39,6 +49,7 @@ public:
 	GameObject(string strN, string strT, double XPos, double YPos); //name tag and start coords
 	GameObject(string strN, double XPos, double YPos);//name and start coords
 	//we can add more constructors as needed. 
+	~GameObject();
 
 	double GetPosX();
     double GetPosY();
@@ -59,6 +70,36 @@ public:
 
 	float RenderPassX();
 	float RenderPassY();
+
+	//Physics Stuff
+	void RegisterAsRigidBody(World world);
+	void DeRegisterAsRigidBody(void);
+
+	void ApplyForce(Vector3 force);
+
+	void setMass(double mass);
+	double getMass(void);
+
+	void rotateX(double rotate);
+	void rotateY(double rotate);
+	double getRotateX(void);
+	double getRotateY(void);
+
+	void setLinearVelocity(double vx, double vy);
+	void setLinearVelocityX(double vx);
+	void setLinearVelocityY(double vy);
+	double getLinearVelocityX(void);
+	double getLinearVelocityY(void);
+
+	void setAngularVelocity(double vx, double vy);
+	void setAngularVelocityX(double vx);
+	void setAngularVelocityY(double vy);
+	double getAngularVelocityX(void);
+	double getAngularVelocityY(void);
+
+	
+
+
 
 };
 
