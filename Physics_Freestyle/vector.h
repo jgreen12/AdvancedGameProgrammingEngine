@@ -5,6 +5,8 @@
 
 #include <ode\ode.h>
 
+class Vector2;
+
 class Vector3
 {
 	private:
@@ -31,6 +33,7 @@ class Vector3
 		dReal getMagnitude(void);
 
 		dReal* convertToDVector(void);
+		Vector2 convertTo2Vector(void);
 
 		Vector3 operator +(Vector3);
 		Vector3 operator -(Vector3);
@@ -67,7 +70,7 @@ public:
 	dReal getMagnitude(void);
 
 	dReal* convertToDVector(void);
-
+	Vector3 convertTo3Vector(void);
 
 	Vector2 operator +(Vector2);
 	Vector2 operator -(Vector2);

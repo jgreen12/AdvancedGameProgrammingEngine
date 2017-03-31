@@ -99,6 +99,13 @@ dReal* Vector3::convertToDVector(void)
 	return result;
 }
 
+Vector2 Vector3::convertTo2Vector(void)
+{
+	Vector2 result(x, y);
+
+	return result;
+}
+
 Vector3 Vector3::operator+(Vector3 that)
 {
 	Vector3 result;
@@ -251,6 +258,13 @@ dReal* Vector2::convertToDVector(void)
 	result[1] = this->y;
 	result[2] = 0;
 	result[3] = 0;
+
+	return result;
+}
+
+Vector3 Vector2::convertTo3Vector(void)
+{
+	Vector3 result(x, y, 0);
 
 	return result;
 }
