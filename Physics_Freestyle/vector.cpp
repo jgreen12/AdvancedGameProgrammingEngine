@@ -1,5 +1,10 @@
 #include "vector.h"
 
+
+
+
+
+//Vector3
 Vector3::Vector3(void)
 {
 	this->x = 0;
@@ -157,6 +162,160 @@ bool Vector3::operator==(Vector3 that)
 }
 
 bool Vector3::operator!=(Vector3 that)
+{
+	dReal thatResult = that.getMagnitude();
+	dReal thisResult = this->getMagnitude();
+
+	return (thisResult != thatResult);
+}
+
+
+
+
+
+
+//Vector2
+
+Vector2::Vector2(void)
+{
+	this->x = 0;
+	this->y = 0;
+}
+
+Vector2::Vector2(dReal x, dReal y)
+{
+	this->x = x;
+	this->y = y;
+}
+
+Vector2::Vector2(const dReal* vector)
+{
+	try
+	{
+		this->x = vector[0];
+		this->y = vector[1];
+	}
+	catch (int exception)
+	{
+		Vector2();
+	}
+}
+
+Vector2::~Vector2(void)
+{
+
+}
+
+void Vector2::setValues(dReal x, dReal y)
+{
+	this->x = x;
+	this->y = y;
+}
+
+void Vector2::copyVector2(Vector2 vector)
+{
+	this->x = vector.x;
+	this->y = vector.y;
+}
+
+void Vector2::setX(dReal x)
+{
+	this->x = x;
+}
+
+void Vector2::setY(dReal y)
+{
+	this->y = y;
+}
+
+dReal Vector2::getMagnitude(void)
+{
+	return sqrt((x * x) + (y * y));
+}
+
+dReal Vector2::getX(void)
+{
+	return this->x;
+}
+
+dReal Vector2::getY(void)
+{
+	return this->y;
+}
+
+dReal* Vector2::convertToDVector(void)
+{
+	dVector3 result;
+
+	result[0] = this->x;
+	result[1] = this->y;
+	result[2] = 0;
+	result[3] = 0;
+
+	return result;
+}
+
+Vector2 Vector2::operator+(Vector2 that)
+{
+	Vector2 result;
+
+	result.setX(this->x + that.x);
+	result.setY(this->y + that.y);
+
+	return result;
+}
+
+Vector2 Vector2::operator-(Vector2 that)
+{
+	Vector2 result;
+
+	result.setX(this->x - that.x);
+	result.setY(this->y - that.y);
+
+	return result;
+}
+
+bool Vector2::operator<(Vector2 that)
+{
+	dReal thatResult = that.getMagnitude();
+	dReal thisResult = this->getMagnitude();
+
+	return (thisResult < thatResult);
+}
+
+bool Vector2::operator>(Vector2 that)
+{
+	dReal thatResult = that.getMagnitude();
+	dReal thisResult = this->getMagnitude();
+
+	return (thisResult > thatResult);
+}
+
+bool Vector2::operator<=(Vector2 that)
+{
+	dReal thatResult = that.getMagnitude();
+	dReal thisResult = this->getMagnitude();
+
+	return (thisResult <= thatResult);
+}
+
+bool Vector2::operator>=(Vector2 that)
+{
+	dReal thatResult = that.getMagnitude();
+	dReal thisResult = this->getMagnitude();
+
+	return (thisResult >= thatResult);
+}
+
+bool Vector2::operator==(Vector2 that)
+{
+	dReal thatResult = that.getMagnitude();
+	dReal thisResult = this->getMagnitude();
+
+	return (thisResult == thatResult);
+}
+
+bool Vector2::operator!=(Vector2 that)
 {
 	dReal thatResult = that.getMagnitude();
 	dReal thisResult = this->getMagnitude();

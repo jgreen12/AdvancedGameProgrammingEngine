@@ -43,4 +43,40 @@ class Vector3
 
 };
 
+
+class Vector2
+{
+private:
+	dReal x;
+	dReal y;
+
+public:
+	Vector2(void);
+	Vector2(const dReal* vector);
+	Vector2(dReal x, dReal y);
+	~Vector2(void);
+
+	void setValues(dReal x, dReal y);
+	void copyVector2(Vector2 vector);
+	void setX(dReal x);
+	void setY(dReal y);
+
+	dReal getX(void);
+	dReal getY(void);
+
+	dReal getMagnitude(void);
+
+	dReal* convertToDVector(void);
+
+
+	Vector2 operator +(Vector2);
+	Vector2 operator -(Vector2);
+	bool operator <(Vector2);
+	bool operator >(Vector2);
+	bool operator ==(Vector2);
+	bool operator !=(Vector2);
+	bool operator <=(Vector2);
+	bool operator >=(Vector2);
+};
+
 #endif

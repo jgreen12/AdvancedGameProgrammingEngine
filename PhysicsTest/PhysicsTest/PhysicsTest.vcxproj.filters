@@ -18,6 +18,9 @@
     <ClCompile Include="..\..\Physics_Freestyle\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\GameObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Physics_Freestyle\main.h">

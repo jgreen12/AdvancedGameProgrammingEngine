@@ -75,8 +75,6 @@ public:
 	void RegisterAsRigidBody(World world);
 	void DeRegisterAsRigidBody(void);
 
-	void ApplyForce(Vector3 force);
-
 	void setMass(double mass);
 	double getMass(void);
 
@@ -97,6 +95,18 @@ public:
 	double getAngularVelocityX(void);
 	double getAngularVelocityY(void);
 
+	void setCenterOfGravity(double gx, double gy);
+	void setCenterOfGravityX(double gx);
+	void setCenterOfGraivtyY(double gy);
+	double getCenterOfGravityX(void);
+	double getCenterOfGravityY(void);
+
+	void addForce(double fx, double fy);
+	void addTorque(double tx, double ty);
+	void addRelativeForce(double fx, double fy);
+	void addRelativeTorque(double tx, double ty);
+	void addForceAtPosition(double fx, double fy, double x, double y);
+	
 	
 
 
