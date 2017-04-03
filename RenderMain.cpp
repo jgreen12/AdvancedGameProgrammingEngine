@@ -33,7 +33,7 @@ const GLchar* vertexSource =
 "void main() {"
 "   Color = color;"
 "   Texcoord = texcoord;"
-"   gl_Position = vec4(position, 0.0, 1.0);"
+"   gl_Position = vec4(position, 1.0, 1.0);"
 "}";
 
 const GLchar* fragmentSource =
@@ -148,24 +148,26 @@ int main()
 	glEnableVertexAttribArray(texAttrib);
 	glVertexAttribPointer(texAttrib, 2, GL_FLOAT, GL_FALSE, 7 * sizeof(GLfloat), (void*)(5 * sizeof(GLfloat)));
 
-	// Load textures
-	GLuint textures[2];
-	glGenTextures(2, textures);
 
+
+	// Load textures
+	//GLuint textures[2];
+	//glGenTextures(2, textures);
 
 
 	sf::Image imagePNG;
-	imagePNG.loadFromFile("w.png");
+	imagePNG.loadFromFile("nyancat.gif");
 
-	sf::Vector2i spriteSize(32, 32);
+	//sf::Vector2i spriteSize(32, 32);
 	
 	
-	glActiveTexture(GL_TEXTURE0);
-	glBindTexture(GL_TEXTURE_2D, textures[0]);
-	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA8, imagePNG.getSize().x, imagePNG.getSize().y, 0, GL_RGB, GL_UNSIGNED_BYTE, imagePNG.getPixelsPtr());
-	glUniform1i(glGetUniformLocation(shaderProgram, "teximagePNG"), 0);
+	//glActiveTexture(GL_TEXTURE0);
+	//glBindTexture(GL_TEXTURE0, textures[1]);
+	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA8, imagePNG.getSize().x, imagePNG.getSize().y, 0, GL_RGBA, GL_UNSIGNED_BYTE, imagePNG.getPixelsPtr());
+	
+	//glUniform1i(glGetUniformLocation(shaderProgram, "teximagePNG"), 0);
 
-	glEnable(GL_TEXTURE_2D);
+	//glEnable(GL_TEXTURE_2D);
 
 	//glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_R, GL_CLAMP);
 	//glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP);
@@ -178,7 +180,7 @@ int main()
 
 	ManageWindow();
 
-	glDeleteTextures(2, textures);
+	//glDeleteTextures(2, textures);
 
 	glDeleteProgram(shaderProgram);
 	glDeleteShader(fragmentShader);
