@@ -22,7 +22,7 @@ class World
 		void set3DGravity(dReal x, dReal y, dReal z);
 		void set3DGravity(Vector3 vector);
 		//void set2DGravity(dReal x, dReal y);
-		void getGravity(Vector3 gravity);
+		Vector3 getGravity(void);
 
 		void setAutoDisableBodies(bool flag);
 		void setAutoDisableLinearThreshold(dReal linearThreshold);
@@ -30,7 +30,7 @@ class World
 		void setAutoDisableSteps(int steps);
 		void setAutoDisableTime(dReal time);
 
-		void convertImpulseToForce(dReal stepSize, dReal iX, dReal iY, dReal iZ, Vector3 force);
+		Vector3 convertImpulseToForce(dReal stepSize, Vector3 impulse);
 
 		void safeStepWorld(dReal stepSize);
 		void quickStepWorld(dReal stepSize);

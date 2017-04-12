@@ -10,6 +10,7 @@
 #include "body.h"
 #include "world.h"
 
+
 #include <ode/ode.h>
 
 using namespace std;
@@ -187,12 +188,14 @@ public:
 
 
 
-float GameObject::RenderPassX() {
-	float x = Position.X;
+float GameObject::RenderPassX() 
+{
+	float x = GetPosX();
 	return 	x;
 }
-float GameObject::RenderPassY() {
-	float y = Position.Y;
+float GameObject::RenderPassY() 
+{
+	float y = GetPosY();
 	return y;
 }
 
@@ -235,16 +238,48 @@ void GameObject::SetType(string newType) {
 
 //Positional Getters and Setters, probably upgrade when integrated with Physics
 double GameObject::GetPosX() {
-	return Position.X;
+
+	if (PhysicsEnabled)
+	{
+		return rigidBody->getPosition().getX();
+	}
+	else
+	{
+		return Position.X;
+	}
 }
-double GameObject::GetPosY() {
-	return Position.Y;
+double GameObject::GetPosY() 
+{
+	if (PhysicsEnabled)
+	{
+		return rigidBody->getPosition().getY();
+	}
+	else
+	{
+		return Position.Y;
+	}
 }
-void GameObject::SetPosX(double newX) {
-	Position.X = newX;
+void GameObject::SetPosX(double newX) 
+{
+	if (PhysicsEnabled)
+	{
+		rigidBody->setPosition(Vector3(newX, GetPosY(), 0));
+	}
+	else
+	{
+		Position.X = newX;
+	}
 }
-void GameObject::SetPosY(double newY) {
-	Position.Y = newY;
+void GameObject::SetPosY(double newY) 
+{
+	if (PhysicsEnabled)
+	{
+		rigidBody->setPosition(Vector3(GetPosX(), newY, 0));
+	}
+	else
+	{
+		Position.Y = newY;
+	}
 }
 
 

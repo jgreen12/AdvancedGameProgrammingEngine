@@ -6,6 +6,15 @@
 #include <list>
 #include <string>
 #include "GameObject.cpp"
+
+//Physics Headers
+#include "vector.h"
+#include "body.h"
+#include "world.h"
+
+
+#include <ode/ode.h>
+
 using namespace std;
 
 class Scene {
@@ -14,6 +23,9 @@ private:
 	int NumOfObjects;
 	list<GameObject> fullListOfObjects;
 	list<GameObject>::iterator fullBeginIter;
+
+	World* physicsWorld;
+
 protected:
 
 
@@ -23,7 +35,233 @@ public:
 	void AddObject(GameObject g);
 	void UpdateObjects();
 	void RemoveObject(GameObject g);
+
+
+	//Physics Stuff
+	bool PhysicsEnabled = false;
+
+	void RegisterAsWorld(void);
+	void DeRegisterAsWorld(void);
+
+	dWorldID getWorldID(void);
+
+	void setGravity(double x, double y);
+	void setGravity(Vector2 vector);
+	Vector2 getGravity(void);
+
+	void setAutoDisableBodies(bool flag);
+	void setAutoDisableLinearThreshold(double linearThreshold);
+	void setAutoDisableAngularThreshold(double angularThreshold);
+	void setAutoDisableSteps(int steps);
+	void setAutoDisableTime(double time);
+
+	Vector2 convertImpulseToForce(double stepSize, Vector2 impulse);
+
+	void safeStepWorld(double stepSize);
+	void quickStepWorld(double stepSize);
+
+	void setQuickStepNumberIterations(int num);
+	void setQuickStepOverRelaxation(int overRelaxation);
+
+	void setLinearDamping(double scale);
+	void setAngularDamping(double scale);
+
+	void setLinearDampingThreshold(double threshold);
+	void setAngularDampingThreshold(double threshold);
+
+	void setMaxAngularSpeed(double maxSpeed);
+
+	void setContactMaxCorrectingVelocity(double velocity);
+
+	void setContactSurfaceLayer(double depth);
 };
+
+void Scene::RegisterAsWorld(void)
+{
+	if (!PhysicsEnabled)
+	{
+		physicsWorld = new World();
+		PhysicsEnabled = true;
+	}
+}
+
+void Scene::DeRegisterAsWorld(void)
+{
+	if (PhysicsEnabled)
+	{
+		delete physicsWorld;
+		PhysicsEnabled = false;
+	}
+}
+
+dWorldID Scene::getWorldID(void)
+{
+	if (PhysicsEnabled)
+	{
+		return physicsWorld->getWorldID();
+	}
+}
+
+void Scene::setGravity(Vector2 gravity)
+{
+	if (PhysicsEnabled)
+	{
+		physicsWorld->set3DGravity(gravity.convertTo3Vector());
+	}
+}
+
+Vector2 Scene::getGravity(void)
+{
+	Vector2 temp(0, 0);
+
+	if (PhysicsEnabled)
+	{
+		temp = physicsWorld->getGravity().convertTo2Vector();
+		return temp;
+	}
+
+	return temp;
+}
+
+void Scene::setAutoDisableBodies(bool flag)
+{
+	if (PhysicsEnabled)
+	{
+		physicsWorld->setAutoDisableBodies(flag);
+	}
+}
+
+void Scene::setAutoDisableLinearThreshold(double linearThreshold)
+{
+	if (PhysicsEnabled)
+	{
+		physicsWorld->setAutoDisableLinearThreshold(linearThreshold);
+	}
+}
+
+void Scene::setAutoDisableAngularThreshold(double angularThreshold)
+{
+	if (PhysicsEnabled)
+	{
+		physicsWorld->setAutoDisableAngularThreshold(angularThreshold);
+	}
+}
+
+void Scene::setAutoDisableSteps(int steps)
+{
+	if (PhysicsEnabled)
+	{
+		physicsWorld->setAutoDisableSteps(steps);
+	}
+}
+
+void Scene::setAutoDisableTime(double time)
+{
+	if (PhysicsEnabled)
+	{
+		physicsWorld->setAutoDisableTime(time);
+	}
+}
+
+Vector2 Scene::convertImpulseToForce(double stepSize, Vector2 impulse)
+{
+	Vector2 temp(0, 0);
+
+	if (PhysicsEnabled)
+	{
+		temp = physicsWorld->convertImpulseToForce(stepSize, impulse.convertTo3Vector()).convertTo2Vector();
+	}
+
+	return temp;
+}
+
+void Scene::safeStepWorld(double stepSize)
+{
+	if (PhysicsEnabled)
+	{
+		physicsWorld->safeStepWorld(stepSize);
+	}
+}
+
+void Scene::quickStepWorld(double stepSize)
+{
+	if (PhysicsEnabled)
+	{
+		physicsWorld->quickStepWorld(stepSize);
+	}
+}
+
+void Scene::setQuickStepNumberIterations(int num)
+{
+	if (PhysicsEnabled)
+	{
+		physicsWorld->setQuickStepNumberIterations(num);
+	}
+}
+
+void Scene::setQuickStepOverRelaxation(int overRelaxation)
+{
+	if (PhysicsEnabled)
+	{
+		physicsWorld->setQuickStepOverRelaxation(overRelaxation);
+	}
+}
+
+void Scene::setLinearDamping(double scale)
+{
+	if (PhysicsEnabled)
+	{
+		physicsWorld->setLinearDamping(scale);
+	}
+}
+
+void Scene::setAngularDamping(double scale)
+{
+	if (PhysicsEnabled)
+	{
+		physicsWorld->setAngularDamping(scale);
+	}
+}
+
+void Scene::setLinearDampingThreshold(double threshold)
+{
+	if (PhysicsEnabled)
+	{
+		physicsWorld->setLinearDampingThreshold(threshold);
+	}
+}
+
+void Scene::setAngularDampingThreshold(double threshold)
+{
+	if (PhysicsEnabled)
+	{
+		physicsWorld->setAngularDampingThreshold(threshold);
+	}
+}
+
+void Scene::setMaxAngularSpeed(double maxSpeed)
+{
+	if (PhysicsEnabled)
+	{
+		physicsWorld->setMaxAngularSpeed(maxSpeed);
+	}
+}
+
+void Scene::setContactMaxCorrectingVelocity(double velocity)
+{
+	if (PhysicsEnabled)
+	{
+		physicsWorld->setContactMaxCorrectingVelocity(velocity);
+	}
+}
+
+void Scene::setContactSurfaceLayer(double depth)
+{
+	if (PhysicsEnabled)
+	{
+		physicsWorld->setContactSurfaceLayer(depth);
+	}
+}
 
 
 void Scene::RemoveObject(GameObject g) {

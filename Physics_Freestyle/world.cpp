@@ -57,11 +57,13 @@ void World::set3DGravity(Vector3 vector)
 //	dWorldSetGravity(this->worldID, x, y, 0);
 //}
 
-void World::getGravity(Vector3 gravity)
+Vector3 World::getGravity(void)
 {
-
+	dVector3 gravity;
 	//Sets the supplied dVector3 as the world's current gravity vector
-	dWorldGetGravity(this->worldID, gravity.convertToDVector());
+	dWorldGetGravity(this->worldID, gravity);
+
+	return Vector3(gravity);
 }
 
 void World::setAutoDisableBodies(bool flag)
@@ -94,10 +96,14 @@ void World::setAutoDisableTime(dReal time)
 	dWorldSetAutoDisableTime(this->worldID, time);
 }
 
-void World::convertImpulseToForce(dReal stepSize, dReal impulseX, dReal impulseY, dReal impulseZ, Vector3 resultingForce)
+Vector3 World::convertImpulseToForce(dReal stepSize, Vector3 impulse)
 {
+	dVector3 resultForce;
+
 	//Converts an Impulse Vector to a resulting Force Vector in this particular World
-	dWorldImpulseToForce(this->worldID, stepSize, impulseX, impulseY, impulseZ, resultingForce.convertToDVector());
+	dWorldImpulseToForce(this->worldID, stepSize, impulse.getX(), impulse.getY(), impulse.getZ(), resultForce);
+
+	return Vector3(resultForce);
 }
 
 void World::safeStepWorld(dReal stepSize)
