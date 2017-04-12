@@ -1,3 +1,6 @@
+#ifndef SCENE
+#define SCENE
+
 //documentation on Lists https://msdn.microsoft.com/en-us/library/802d66bt.aspx
 //This is not complete by any means, I will flesh it out as we continue the merging process, this is just a starting point.
 
@@ -5,22 +8,24 @@
 //created by: Joshua Green
 #include <list>
 #include <string>
-#include "GameObject.cpp"
+#include "..\GameEngineIntegration\GameEngineIntegration\GameObject.cpp"
 
 //Physics Headers
-#include "vector.h"
-#include "body.h"
-#include "world.h"
+//#include "vector.h"
+//#include "body.h"
+//#include "world.h"
 
 
-#include <ode/ode.h>
+//#include <ode/ode.h>
 
 using namespace std;
 
 class Scene {
 private:
+
+	
 	string SceneName;
-	int NumOfObjects;
+	
 	list<GameObject> fullListOfObjects;
 	list<GameObject>::iterator fullBeginIter;
 
@@ -30,6 +35,7 @@ protected:
 
 
 public:
+	int NumOfObjects;
 	Scene();
 	void RemoveAllObjects();
 	void AddObject(GameObject g);
@@ -290,3 +296,5 @@ Scene::Scene() {
 	NumOfObjects = 0;
 	fullBeginIter = fullListOfObjects.begin();
 }
+
+#endif

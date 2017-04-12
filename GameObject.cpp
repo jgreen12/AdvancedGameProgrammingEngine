@@ -1,3 +1,10 @@
+#ifndef GAMEOBJECT
+#define GAMEOBJECT
+
+//#pragma warning (disable : 4996 3)
+
+
+
 //Comment any functions or changes to function you make so that we can keep track of who did the additions, BitBucket does this, but Alihan won't know without the comments.
 
 //Created by: Joshua Green
@@ -41,14 +48,18 @@ protected:
 	string Name; //name of the object
 	string Type; //a tag of the object, could be used to find all objects of a certain type, and apply an effect dynamically or something
 
+	int ID;
+
 public:
 
+	bool operator== (const GameObject &g1 ) const;
 
-	GameObject(); //the constructors that follow should be self explanatory. 
-	GameObject(string strN); //strN for the Name of the object
-	GameObject(string strN, string strT);	//strT for the Tag
-	GameObject(string strN, string strT, double XPos, double YPos); //name tag and start coords
-	GameObject(string strN, double XPos, double YPos);//name and start coords
+
+	GameObject(int id); //the constructors that follow should be self explanatory. 
+	GameObject(int id, string strN); //strN for the Name of the object
+	GameObject(int id, string strN, string strT);	//strT for the Tag
+	GameObject(int id, string strN, string strT, double XPos, double YPos); //name tag and start coords
+	GameObject(int id, string strN, double XPos, double YPos);//name and start coords
 	//we can add more constructors as needed. 
 	~GameObject();
 
@@ -185,6 +196,13 @@ public:
 
 
 };
+
+
+
+bool GameObject::operator== (const GameObject &g1) const {
+	return this->ID == g1.ID;
+}
+
 
 
 
@@ -943,7 +961,7 @@ GameObject and unspecified
 
 
 //For all constructors we should discuss default states...
-GameObject::GameObject() {
+GameObject::GameObject(int id) {
 	Name = "GameObject";
 	Type = "unspecified";
 	Active = 1;
@@ -952,11 +970,13 @@ GameObject::GameObject() {
 
 	Position.X = 0;
 	Position.Y = 0;
+
+	ID = id;
 }
 
 
 //Name constructor
-GameObject::GameObject(string strN) {
+GameObject::GameObject(int id, string strN) {
 	Name = strN;
 	Type = "unspecified";
 	Active = 1;
@@ -965,9 +985,11 @@ GameObject::GameObject(string strN) {
 
 	Position.X = 0;
 	Position.Y = 0;
+
+	ID = id;
 }
 //Name and Type Constructor
-GameObject::GameObject(string strN, string strT) {
+GameObject::GameObject(int id, string strN, string strT) {
 	Name = strN;
 	Type = strT;
 	Active = 1;
@@ -976,9 +998,11 @@ GameObject::GameObject(string strN, string strT) {
 
 	Position.X = 0;
 	Position.Y = 0;
+
+	ID = id;
 }
 
-GameObject::GameObject(string strN, string strT, double XPos, double YPos) {
+GameObject::GameObject(int id, string strN, string strT, double XPos, double YPos) {
 	Name = strN;
 	Type = strT;
 	Active = 1;
@@ -987,9 +1011,11 @@ GameObject::GameObject(string strN, string strT, double XPos, double YPos) {
 
 	Position.X = XPos;
 	Position.Y = YPos;
+
+	ID = id;
 }
 
-GameObject::GameObject(string strN, double XPos, double YPos) {
+GameObject::GameObject(int id, string strN, double XPos, double YPos) {
 	Name = strN;
 	Type = "unspecified";
 	Active = 1;
@@ -998,4 +1024,10 @@ GameObject::GameObject(string strN, double XPos, double YPos) {
 
 	Position.X = XPos;
 	Position.Y = YPos;
+
+	ID = id;
 }
+
+
+
+#endif
