@@ -29,5 +29,11 @@
     <ClInclude Include="..\..\Physics_Freestyle\main.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\GameObject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Scene.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

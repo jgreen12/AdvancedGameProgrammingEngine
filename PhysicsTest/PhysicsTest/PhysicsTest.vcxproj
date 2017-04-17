@@ -89,7 +89,7 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>dDOUBLE;WIN32;_DEBUG;_CONSOLE;dDOUBLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>G:\Advanced Game Programming\AdvancedGameProgrammingEngine\Physics_Freestyle;G:\Advanced Game Programming\AdvancedGameProgrammingEngine\ode-0.14\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>G:\Advanced Game Programming\AdvancedGameProgrammingEngine;G:\Advanced Game Programming\AdvancedGameProgrammingEngine\Physics_Freestyle;G:\Advanced Game Programming\AdvancedGameProgrammingEngine\ode-0.14\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -173,7 +173,9 @@
     <ClCompile Include="..\..\Scene.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\GameObject.h" />
     <ClInclude Include="..\..\Physics_Freestyle\main.h" />
+    <ClInclude Include="..\..\Scene.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
