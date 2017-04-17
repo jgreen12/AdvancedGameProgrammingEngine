@@ -27,6 +27,12 @@
     <ClInclude Include="vec2.h">
       <Filter>src\maths</Filter>
     </ClInclude>
+    <ClInclude Include="GameObject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="window.cpp">
@@ -36,6 +42,12 @@
       <Filter>src\maths</Filter>
     </ClCompile>
     <ClCompile Include="main.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene.cpp">
       <Filter>src</Filter>
     </ClCompile>
   </ItemGroup>
