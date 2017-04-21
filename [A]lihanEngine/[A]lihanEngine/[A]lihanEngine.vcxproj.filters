@@ -39,6 +39,7 @@
     <ClInclude Include="vec2.h">
       <Filter>src\maths</Filter>
     </ClInclude>
+
     <ClInclude Include="vec3.h">
       <Filter>src\maths</Filter>
     </ClInclude>
@@ -77,6 +78,13 @@
     </ClInclude>
     <ClInclude Include="simple2drenderer.h">
       <Filter>src\graphics</Filter>
+
+    <ClInclude Include="GameObject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene.h">
+      <Filter>Header Files</Filter>
+
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -89,6 +97,7 @@
     <ClCompile Include="main.cpp">
       <Filter>src</Filter>
     </ClCompile>
+
     <ClCompile Include="vec3.cpp">
       <Filter>src\maths</Filter>
     </ClCompile>
@@ -127,5 +136,13 @@
     <None Include="basic.frag">
       <Filter>src\shaders</Filter>
     </None>
+
+    <ClCompile Include="GameObject.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+
   </ItemGroup>
 </Project>
