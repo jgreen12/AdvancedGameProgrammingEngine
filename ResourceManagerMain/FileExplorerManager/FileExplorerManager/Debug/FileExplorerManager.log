@@ -1,0 +1,14 @@
+﻿  stdafx.cpp
+  ViewTree.cpp
+  PropertiesWnd.cpp
+  OutputWnd.cpp
+  MainFrm.cpp
+  FileView.cpp
+  FileExplorerManagerView.cpp
+  FileExplorerManagerDoc.cpp
+  FileExplorerManager.cpp
+  ClassView.cpp
+  ChildFrm.cpp
+  Generating Code...
+  FileExplorerManager.vcxproj -> c:\users\natsu\documents\visual studio 2017\Projects\FileExplorerManager\Debug\FileExplorerManager.exe
+  FileExplorerManager.vcxproj -> c:\users\natsu\documents\visual studio 2017\Projects\FileExplorerManager\Debug\FileExplorerManager.pdb (Partial PDB)
