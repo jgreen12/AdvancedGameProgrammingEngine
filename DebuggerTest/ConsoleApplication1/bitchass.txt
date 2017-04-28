@@ -1,0 +1,42 @@
+SymInit: Symbol-SearchPath: '.;E:\DebuggerCrap\DebuggerTest\ConsoleApplication1;E:\DebuggerCrap\DebuggerTest\ConsoleApplication1\Debug;C:\Windows;C:\Windows\system32;SRV*C:\websymbols*http://msdl.microsoft.com/download/symbols;', symOptions: 530, UserName: 'Noah'
+OS-Version: 6.2.9200 () 0x100-0x1
+E:\DebuggerCrap\DebuggerTest\ConsoleApplication1\Debug\ConsoleApplication1.exe:ConsoleApplication1.exe (00060000), size: 106496 (result: 0), SymType: 'PDB', PDB: 'E:\DebuggerCrap\DebuggerTest\ConsoleApplication1\Debug\ConsoleApplication1.exe'
+C:\Windows\SYSTEM32\ntdll.dll:ntdll.dll (77810000), size: 1585152 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\SYSTEM32\ntdll.dll', fileVersion: 6.2.14393.479
+C:\Windows\System32\KERNEL32.DLL:KERNEL32.DLL (76E50000), size: 917504 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\KERNEL32.DLL', fileVersion: 6.2.14393.0
+C:\Windows\System32\KERNELBASE.dll:KERNELBASE.dll (76760000), size: 1708032 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\KERNELBASE.dll', fileVersion: 6.2.14393.1066
+C:\Windows\system32\apphelp.dll:apphelp.dll (73430000), size: 598016 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\system32\apphelp.dll', fileVersion: 6.2.14393.0
+C:\Windows\System32\USER32.dll:USER32.dll (75A50000), size: 1437696 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\USER32.dll', fileVersion: 6.2.14393.576
+C:\Windows\System32\win32u.dll:win32u.dll (76AB0000), size: 86016 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\win32u.dll', fileVersion: 6.2.14393.51
+C:\Windows\System32\GDI32.dll:GDI32.dll (76510000), size: 176128 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\GDI32.dll', fileVersion: 6.2.14393.206
+C:\Windows\System32\gdi32full.dll:gdi32full.dll (76F30000), size: 1421312 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\gdi32full.dll', fileVersion: 6.2.14393.1066
+C:\Windows\System32\ADVAPI32.dll:ADVAPI32.dll (77310000), size: 487424 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\ADVAPI32.dll', fileVersion: 6.2.14393.0
+C:\Windows\System32\msvcrt.dll:msvcrt.dll (76CE0000), size: 778240 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\msvcrt.dll', fileVersion: 7.0.14393.0
+C:\Windows\System32\sechost.dll:sechost.dll (76E00000), size: 266240 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\sechost.dll', fileVersion: 6.2.14393.0
+C:\Windows\System32\RPCRT4.dll:RPCRT4.dll (76690000), size: 790528 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\RPCRT4.dll', fileVersion: 6.2.14393.82
+C:\Windows\System32\SspiCli.dll:SspiCli.dll (742D0000), size: 122880 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\SspiCli.dll', fileVersion: 6.2.14393.576
+C:\Windows\System32\CRYPTBASE.dll:CRYPTBASE.dll (742C0000), size: 40960 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\CRYPTBASE.dll', fileVersion: 6.2.14393.0
+C:\Windows\System32\bcryptPrimitives.dll:bcryptPrimitives.dll (74350000), size: 368640 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\bcryptPrimitives.dll', fileVersion: 6.2.14393.0
+C:\Windows\SYSTEM32\MSVCP140D.dll:MSVCP140D.dll (0FA30000), size: 757760 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\SYSTEM32\MSVCP140D.dll', fileVersion: 14.0.24215.1
+C:\Windows\SYSTEM32\VERSION.dll:VERSION.dll (73150000), size: 32768 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\SYSTEM32\VERSION.dll', fileVersion: 6.2.14393.0
+C:\Windows\SYSTEM32\VCRUNTIME140D.dll:VCRUNTIME140D.dll (0F490000), size: 114688 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\SYSTEM32\VCRUNTIME140D.dll', fileVersion: 14.0.24215.1
+C:\Windows\SYSTEM32\ucrtbased.dll:ucrtbased.dll (00F40000), size: 1519616 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\SYSTEM32\ucrtbased.dll', fileVersion: 10.0.10240.16384
+C:\Windows\System32\IMM32.DLL:IMM32.DLL (743B0000), size: 151552 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\IMM32.DLL', fileVersion: 6.2.14393.0
+C:\Windows\SYSTEM32\dbghelp.dll:dbghelp.dll (66770000), size: 1331200 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\SYSTEM32\dbghelp.dll', fileVersion: 6.2.14321.1024
+C:\Windows\System32\ucrtbase.dll:ucrtbase.dll (76590000), size: 917504 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\ucrtbase.dll', fileVersion: 6.2.14393.0
+e:\debuggercrap\debuggertest\consoleapplication1\stackwalker.cpp (922): StackWalker::ShowCallstack
+e:\debuggercrap\debuggertest\consoleapplication1\source.cpp (56): Func5
+e:\debuggercrap\debuggertest\consoleapplication1\source.cpp (57): Func4
+e:\debuggercrap\debuggertest\consoleapplication1\source.cpp (58): Func3
+e:\debuggercrap\debuggertest\consoleapplication1\source.cpp (59): Func2
+e:\debuggercrap\debuggertest\consoleapplication1\source.cpp (60): TestCurrentThread
+e:\debuggercrap\debuggertest\consoleapplication1\source.cpp (214): wmain
+f:\dd\vctools\crt\vcstartup\src\startup\exe_common.inl (79): invoke_main
+f:\dd\vctools\crt\vcstartup\src\startup\exe_common.inl (253): __scrt_common_main_seh
+f:\dd\vctools\crt\vcstartup\src\startup\exe_common.inl (296): __scrt_common_main
+f:\dd\vctools\crt\vcstartup\src\startup\exe_wmain.cpp (17): wmainCRTStartup
+ERROR: SymGetLineFromAddr64, GetLastError: 487 (Address: 76E662C4)
+76E662C4 (KERNEL32): (filename not available): BaseThreadInitThunk
+ERROR: SymGetLineFromAddr64, GetLastError: 487 (Address: 77870FD9)
+77870FD9 (ntdll): (filename not available): RtlSubscribeWnfStateChangeNotification
+ERROR: SymGetLineFromAddr64, GetLastError: 487 (Address: 77870FA4)
+77870FA4 (ntdll): (filename not available): RtlSubscribeWnfStateChangeNotification
