@@ -1,5 +1,0 @@
-This is plain text.
-
-Plain text (like XML, HTML, or source files) work just fine inside the Resource File Manager.
-
-Peace out, home-slice.
