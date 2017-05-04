@@ -1,2 +1,21 @@
-﻿  ResourceManager.vcxproj -> C:\Users\excar\OneDrive\Documents\Visual Studio 2017\Projects\ResourceManagerMain\Debug\ResourceManager.exe
-  ResourceManager.vcxproj -> C:\Users\excar\OneDrive\Documents\Visual Studio 2017\Projects\ResourceManagerMain\Debug\ResourceManager.pdb (Partial PDB)
+﻿  RMPlaying_State.cpp
+c:\users\m00ndog\documents\advanced game programming\advancedgameprogrammingengine\resourcemanagermain\rmsource\resource_managers\texture_manager.h(5): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  RMGame_State.cpp
+c:\users\m00ndog\documents\advanced game programming\advancedgameprogrammingengine\resourcemanagermain\rmsource\resource_managers\texture_manager.h(5): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  RMmain.cpp
+c:\users\m00ndog\documents\advanced game programming\advancedgameprogrammingengine\resourcemanagermain\rmsource\resource_managers\texture_manager.h(5): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  RMDisplay.cpp
+c:\users\m00ndog\documents\advanced game programming\advancedgameprogrammingengine\resourcemanagermain\rmsource\rmdisplay.h(4): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  RMApplication.cpp
+c:\users\m00ndog\documents\advanced game programming\advancedgameprogrammingengine\resourcemanagermain\rmsource\resource_managers\texture_manager.h(5): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  RMAnimation.cpp
+c:\users\m00ndog\documents\advanced game programming\advancedgameprogrammingengine\resourcemanagermain\rmsource\rmanimation.h(4): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  Texture_Manager.cpp
+c:\users\m00ndog\documents\advanced game programming\advancedgameprogrammingengine\resourcemanagermain\rmsource\resource_managers\texture_manager.h(5): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  Sound_Manager.cpp
+c:\users\m00ndog\documents\advanced game programming\advancedgameprogrammingengine\resourcemanagermain\rmsource\resource_managers\sound_manager.h(4): fatal error C1083: Cannot open include file: 'SFML/Audio.hpp': No such file or directory
+  Resource_Holder.cpp
+c:\users\m00ndog\documents\advanced game programming\advancedgameprogrammingengine\resourcemanagermain\rmsource\resource_managers\texture_manager.h(5): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  Font_Manager.cpp
+c:\users\m00ndog\documents\advanced game programming\advancedgameprogrammingengine\resourcemanagermain\rmsource\resource_managers\font_manager.h(4): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  Generating Code...
