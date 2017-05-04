@@ -25,6 +25,14 @@ namespace prototype {
 
 			void enable() const;
 			void disable() const;
+
+			inline Shader operator=(const Shader& other) {
+				m_ShaderID = other.m_ShaderID;
+				m_VertPath = other.m_VertPath;
+				m_FragPath = other.m_FragPath;
+
+				return *this;
+			}
 		private:
 			GLint getUniformLocation(const GLchar* name);
 			GLuint load();
