@@ -1,6 +1,8 @@
 #pragma once
 
 #include <iostream>
+#include <vector>
+#include "vector.h"
 
 namespace prototype {
 	namespace maths {
@@ -28,6 +30,13 @@ namespace prototype {
 
 			bool operator==(const vec2& other);
 			bool operator!=(const vec2& other);
+
+			inline vec2& operator=(Vector2& other) {
+				double a = other.getX();
+				double b = other.getY();
+				x = (float)a;
+				y = (float)b;
+			}
 
 
 			friend std::ostream& operator<<(std::ostream& stream, const vec2& vector);
