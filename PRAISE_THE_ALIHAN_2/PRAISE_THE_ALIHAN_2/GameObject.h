@@ -12,7 +12,7 @@
 #include "vector.h"
 #include "body.h"
 #include "world.h"
-
+#include "renderable2d.h"
 
 #include <ode/ode.h>
 
@@ -26,7 +26,7 @@ using namespace std;
 class GameObject {
 private:
 
-	Body* rigidBody;
+	
 
 protected:
 	//rudimentary method of tracking position until we link up on physics
@@ -47,6 +47,8 @@ protected:
 	int ID;
 
 public:
+
+	Body* rigidBody;
 
 	bool operator==(const GameObject& poop) const;
 
@@ -189,7 +191,8 @@ public:
 
 	dWorldID getWorldID(void);
 
-
+	prototype::graphics::Renderable2D* sprite = NULL;
+	void initializeRenderable(prototype::maths::vec3 position, prototype::maths::vec2 size, prototype::maths::vec4 color, prototype::graphics::Shader& shader);
 };
 
 #endif

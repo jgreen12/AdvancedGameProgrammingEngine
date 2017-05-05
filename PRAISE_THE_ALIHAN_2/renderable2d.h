@@ -5,7 +5,6 @@
 #include "maths.h"
 #include "shader.h"
 
-
 namespace prototype {
 	namespace graphics {
 		class Renderable2D {
@@ -57,20 +56,7 @@ namespace prototype {
 			inline const maths::vec4& getColor() const { return m_Color; }
 
 			inline void update(maths::vec3 translation) {
-				m_Position = translation;
-//				cout << "Translation: " << m_Position << endl;
-			}
-
-			inline Renderable2D operator=(const Renderable2D& other) {
-				m_Position = other.m_Position;
-				m_Size = other.m_Size;
-				m_Color = other.m_Color;
-
-				m_Shader = other.m_Shader;
-				m_VertexArray = other.m_VertexArray;
-				m_IndexBuffer = other.m_IndexBuffer;
-
-				return *this;
+				m_Position += translation;
 			}
 		};
 	}

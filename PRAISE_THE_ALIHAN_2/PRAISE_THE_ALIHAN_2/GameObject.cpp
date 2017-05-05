@@ -8,7 +8,7 @@
 //Comment any functions or changes to function you make so that we can keep track of who did the additions, BitBucket does this, but Alihan won't know without the comments.
 
 //Created by: Joshua Green
-//Collaboration with: 
+//Collaboration with: Noah Pena
 //#include <string>
 //#include <vector>
 
@@ -27,6 +27,11 @@ using namespace std;
 //GameObject class to keep track of game objects, may need to make the class abstract?
 
 
+//THIS WILL NEED AN OVERLOADED ASSIGNMENT OPERATOR FROM CHARLES PART
+void GameObject::initializeRenderable(prototype::maths::vec3 position, prototype::maths::vec2 size, prototype::maths::vec4 color, prototype::graphics::Shader& shader) {
+	sprite = new prototype::graphics::Renderable2D(position, size, color, shader);
+}
+	
 
 bool GameObject::operator== (const GameObject &g1) const {
 	return this->ID == g1.ID;
@@ -37,13 +42,11 @@ bool GameObject::operator== (const GameObject &g1) const {
 
 float GameObject::RenderPassX() 
 {
-	float x = (float)GetPosX();
-	return 	x;
+	return ((float)GetPosX());
 }
 float GameObject::RenderPassY() 
 {
-	float y = (float)GetPosY();
-	return y;
+	return ((float)GetPosY());
 }
 
 
