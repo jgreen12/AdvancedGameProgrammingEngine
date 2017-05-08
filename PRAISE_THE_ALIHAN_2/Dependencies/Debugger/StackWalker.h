@@ -14,6 +14,8 @@
 
 #include <windows.h>
 
+#pragma warning(disable : 4996)
+
 // special defines for VC5/6 (if no actual PSDK is installed):
 #if _MSC_VER < 1300
 typedef unsigned __int64 DWORD64, *PDWORD64;

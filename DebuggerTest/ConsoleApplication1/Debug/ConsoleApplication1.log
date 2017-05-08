@@ -1,0 +1,16 @@
+﻿  StackWalker.cpp
+e:\advanced game programming\advancedgameprogrammingengine\debuggertest\consoleapplication1\stackwalker.h(120): warning C4091: 'typedef ': ignored on left of 'StackWalker::CallstackEntryType' when no variable is declared
+c:\program files (x86)\windows kits\8.1\include\um\dbghelp.h(1544): warning C4091: 'typedef ': ignored on left of '' when no variable is declared
+c:\program files (x86)\windows kits\8.1\include\um\dbghelp.h(3190): warning C4091: 'typedef ': ignored on left of '' when no variable is declared
+e:\advanced game programming\advancedgameprogrammingengine\debuggertest\consoleapplication1\stackwalker.cpp(356): warning C4091: 'typedef ': ignored on left of 'StackWalkerInternal::IMAGEHLP_MODULE64_V2' when no variable is declared
+e:\advanced game programming\advancedgameprogrammingengine\debuggertest\consoleapplication1\stackwalker.cpp(1209): warning C4996: 'GetVersionExA': was declared deprecated
+  c:\program files (x86)\windows kits\8.1\include\um\sysinfoapi.h(433): note: see declaration of 'GetVersionExA'
+  Source.cpp
+e:\advanced game programming\advancedgameprogrammingengine\debuggertest\consoleapplication1\stackwalker.h(120): warning C4091: 'typedef ': ignored on left of 'StackWalker::CallstackEntryType' when no variable is declared
+e:\advanced game programming\advancedgameprogrammingengine\debuggertest\consoleapplication1\source.cpp(88): warning C4101: 'szTemp': unreferenced local variable
+  Logger.cpp
+e:\advanced game programming\advancedgameprogrammingengine\debuggertest\consoleapplication1\stackwalker.h(120): warning C4091: 'typedef ': ignored on left of 'StackWalker::CallstackEntryType' when no variable is declared
+  Generating Code...
+Logger.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/OPT:LBR' specification
+  ConsoleApplication1.vcxproj -> E:\Advanced Game Programming\AdvancedGameProgrammingEngine\DebuggerTest\ConsoleApplication1\Debug\ConsoleApplication1.exe
+  ConsoleApplication1.vcxproj -> E:\Advanced Game Programming\AdvancedGameProgrammingEngine\DebuggerTest\ConsoleApplication1\Debug\ConsoleApplication1.pdb (Full PDB)

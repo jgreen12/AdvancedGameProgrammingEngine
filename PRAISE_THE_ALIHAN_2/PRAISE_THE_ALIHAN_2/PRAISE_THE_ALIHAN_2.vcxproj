@@ -118,6 +118,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\Dependencies\Debugger\StackWalker.cpp" />
     <ClCompile Include="buffer.cpp" />
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="indexbuffer.cpp" />
@@ -138,6 +139,8 @@
     <None Include="basic.vert" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\Dependencies\Debugger\Logger.h" />
+    <ClInclude Include="..\Dependencies\Debugger\StackWalker.h" />
     <ClInclude Include="buffer.h" />
     <ClInclude Include="fileUtils.h" />
     <ClInclude Include="GameObject.h" />

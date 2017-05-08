@@ -6,12 +6,12 @@
 #include "StackWalker.h"
 #include <fstream>
 
+
 class Logger : public StackWalker
 {
 
 private:
 	std::ofstream debugFile;
-
 
 public:
 
@@ -28,8 +28,14 @@ public:
 	void Logger::OnOutput(LPCSTR szText)
 	{
 		this->debugFile << szText;
-			
+
 		StackWalker::OnOutput(szText);
+	}
+
+	LONG WINAPI Logger::ExpFilter(EXCEPTION_POINTERS* pExp, DWORD dwExpCode)
+	{
+		this->ShowCallstack(GetCurrentThread(), pExp->ContextRecord);
+		return EXCEPTION_EXECUTE_HANDLER;
 	}
 
 

@@ -1,0 +1,61 @@
+﻿  Scene.cpp
+g:\advanced game programming\advancedgameprogrammingengine\[a]lihanengine\dependencies\ode-0.14\include\ode\odecpp_collision.h(386): warning C4068: unknown pragma
+g:\advanced game programming\advancedgameprogrammingengine\[a]lihanengine\dependencies\ode-0.14\include\ode\odecpp_collision.h(387): warning C4068: unknown pragma
+g:\advanced game programming\advancedgameprogrammingengine\[a]lihanengine\dependencies\ode-0.14\include\ode\odecpp_collision.h(399): warning C4068: unknown pragma
+g:\advanced game programming\advancedgameprogrammingengine\[a]lihanengine\dependencies\ode-0.14\include\ode\odecpp_collision.h(391): error C4996: 'dGeomRaySetParams': was declared deprecated
+  g:\advanced game programming\advancedgameprogrammingengine\[a]lihanengine\dependencies\ode-0.14\include\ode\collision.h(1078): note: see declaration of 'dGeomRaySetParams'
+g:\advanced game programming\advancedgameprogrammingengine\[a]lihanengine\dependencies\ode-0.14\include\ode\odecpp_collision.h(395): error C4996: 'dGeomRayGetParams': was declared deprecated
+  g:\advanced game programming\advancedgameprogrammingengine\[a]lihanengine\dependencies\ode-0.14\include\ode\collision.h(1079): note: see declaration of 'dGeomRayGetParams'
+g:\advanced game programming\advancedgameprogrammingengine\[a]lihanengine\dependencies\ode-0.14\include\ode\odecpp_collision.h(421): warning C4068: unknown pragma
+g:\advanced game programming\advancedgameprogrammingengine\[a]lihanengine\dependencies\ode-0.14\include\ode\odecpp_collision.h(422): warning C4068: unknown pragma
+g:\advanced game programming\advancedgameprogrammingengine\[a]lihanengine\dependencies\ode-0.14\include\ode\odecpp_collision.h(433): error C4996: 'dCreateGeomTransform': was declared deprecated
+  g:\advanced game programming\advancedgameprogrammingengine\[a]lihanengine\dependencies\ode-0.14\include\ode\collision.h(1089): note: see declaration of 'dCreateGeomTransform'
+g:\advanced game programming\advancedgameprogrammingengine\[a]lihanengine\dependencies\ode-0.14\include\ode\odecpp_collision.h(435): error C4996: 'dCreateGeomTransform': was declared deprecated
+  g:\advanced game programming\advancedgameprogrammingengine\[a]lihanengine\dependencies\ode-0.14\include\ode\collision.h(1089): note: see declaration of 'dCreateGeomTransform'
+g:\advanced game programming\advancedgameprogrammingengine\[a]lihanengine\dependencies\ode-0.14\include\ode\odecpp_collision.h(439): error C4996: 'dCreateGeomTransform': was declared deprecated
+  g:\advanced game programming\advancedgameprogrammingengine\[a]lihanengine\dependencies\ode-0.14\include\ode\collision.h(1089): note: see declaration of 'dCreateGeomTransform'
+g:\advanced game programming\advancedgameprogrammingengine\[a]lihanengine\dependencies\ode-0.14\include\ode\odecpp_collision.h(443): error C4996: 'dGeomTransformSetGeom': was declared deprecated
+  g:\advanced game programming\advancedgameprogrammingengine\[a]lihanengine\dependencies\ode-0.14\include\ode\collision.h(1090): note: see declaration of 'dGeomTransformSetGeom'
+g:\advanced game programming\advancedgameprogrammingengine\[a]lihanengine\dependencies\ode-0.14\include\ode\odecpp_collision.h(445): error C4996: 'dGeomTransformGetGeom': was declared deprecated
+  g:\advanced game programming\advancedgameprogrammingengine\[a]lihanengine\dependencies\ode-0.14\include\ode\collision.h(1091): note: see declaration of 'dGeomTransformGetGeom'
+g:\advanced game programming\advancedgameprogrammingengine\[a]lihanengine\dependencies\ode-0.14\include\ode\odecpp_collision.h(448): error C4996: 'dGeomTransformSetCleanup': was declared deprecated
+  g:\advanced game programming\advancedgameprogrammingengine\[a]lihanengine\dependencies\ode-0.14\include\ode\collision.h(1092): note: see declaration of 'dGeomTransformSetCleanup'
+g:\advanced game programming\advancedgameprogrammingengine\[a]lihanengine\dependencies\ode-0.14\include\ode\odecpp_collision.h(450): error C4996: 'dGeomTransformGetCleanup': was declared deprecated
+  g:\advanced game programming\advancedgameprogrammingengine\[a]lihanengine\dependencies\ode-0.14\include\ode\collision.h(1093): note: see declaration of 'dGeomTransformGetCleanup'
+g:\advanced game programming\advancedgameprogrammingengine\[a]lihanengine\dependencies\ode-0.14\include\ode\odecpp_collision.h(453): error C4996: 'dGeomTransformSetInfo': was declared deprecated
+  g:\advanced game programming\advancedgameprogrammingengine\[a]lihanengine\dependencies\ode-0.14\include\ode\collision.h(1094): note: see declaration of 'dGeomTransformSetInfo'
+g:\advanced game programming\advancedgameprogrammingengine\[a]lihanengine\dependencies\ode-0.14\include\ode\odecpp_collision.h(455): error C4996: 'dGeomTransformGetInfo': was declared deprecated
+  g:\advanced game programming\advancedgameprogrammingengine\[a]lihanengine\dependencies\ode-0.14\include\ode\collision.h(1095): note: see declaration of 'dGeomTransformGetInfo'
+g:\advanced game programming\advancedgameprogrammingengine\[a]lihanengine\dependencies\ode-0.14\include\ode\odecpp_collision.h(461): warning C4068: unknown pragma
+  GameObject.cpp
+g:\advanced game programming\advancedgameprogrammingengine\[a]lihanengine\dependencies\ode-0.14\include\ode\odecpp_collision.h(386): warning C4068: unknown pragma
+g:\advanced game programming\advancedgameprogrammingengine\[a]lihanengine\dependencies\ode-0.14\include\ode\odecpp_collision.h(387): warning C4068: unknown pragma
+g:\advanced game programming\advancedgameprogrammingengine\[a]lihanengine\dependencies\ode-0.14\include\ode\odecpp_collision.h(399): warning C4068: unknown pragma
+g:\advanced game programming\advancedgameprogrammingengine\[a]lihanengine\dependencies\ode-0.14\include\ode\odecpp_collision.h(391): error C4996: 'dGeomRaySetParams': was declared deprecated
+  g:\advanced game programming\advancedgameprogrammingengine\[a]lihanengine\dependencies\ode-0.14\include\ode\collision.h(1078): note: see declaration of 'dGeomRaySetParams'
+g:\advanced game programming\advancedgameprogrammingengine\[a]lihanengine\dependencies\ode-0.14\include\ode\odecpp_collision.h(395): error C4996: 'dGeomRayGetParams': was declared deprecated
+  g:\advanced game programming\advancedgameprogrammingengine\[a]lihanengine\dependencies\ode-0.14\include\ode\collision.h(1079): note: see declaration of 'dGeomRayGetParams'
+g:\advanced game programming\advancedgameprogrammingengine\[a]lihanengine\dependencies\ode-0.14\include\ode\odecpp_collision.h(421): warning C4068: unknown pragma
+g:\advanced game programming\advancedgameprogrammingengine\[a]lihanengine\dependencies\ode-0.14\include\ode\odecpp_collision.h(422): warning C4068: unknown pragma
+g:\advanced game programming\advancedgameprogrammingengine\[a]lihanengine\dependencies\ode-0.14\include\ode\odecpp_collision.h(433): error C4996: 'dCreateGeomTransform': was declared deprecated
+  g:\advanced game programming\advancedgameprogrammingengine\[a]lihanengine\dependencies\ode-0.14\include\ode\collision.h(1089): note: see declaration of 'dCreateGeomTransform'
+g:\advanced game programming\advancedgameprogrammingengine\[a]lihanengine\dependencies\ode-0.14\include\ode\odecpp_collision.h(435): error C4996: 'dCreateGeomTransform': was declared deprecated
+  g:\advanced game programming\advancedgameprogrammingengine\[a]lihanengine\dependencies\ode-0.14\include\ode\collision.h(1089): note: see declaration of 'dCreateGeomTransform'
+g:\advanced game programming\advancedgameprogrammingengine\[a]lihanengine\dependencies\ode-0.14\include\ode\odecpp_collision.h(439): error C4996: 'dCreateGeomTransform': was declared deprecated
+  g:\advanced game programming\advancedgameprogrammingengine\[a]lihanengine\dependencies\ode-0.14\include\ode\collision.h(1089): note: see declaration of 'dCreateGeomTransform'
+g:\advanced game programming\advancedgameprogrammingengine\[a]lihanengine\dependencies\ode-0.14\include\ode\odecpp_collision.h(443): error C4996: 'dGeomTransformSetGeom': was declared deprecated
+  g:\advanced game programming\advancedgameprogrammingengine\[a]lihanengine\dependencies\ode-0.14\include\ode\collision.h(1090): note: see declaration of 'dGeomTransformSetGeom'
+g:\advanced game programming\advancedgameprogrammingengine\[a]lihanengine\dependencies\ode-0.14\include\ode\odecpp_collision.h(445): error C4996: 'dGeomTransformGetGeom': was declared deprecated
+  g:\advanced game programming\advancedgameprogrammingengine\[a]lihanengine\dependencies\ode-0.14\include\ode\collision.h(1091): note: see declaration of 'dGeomTransformGetGeom'
+g:\advanced game programming\advancedgameprogrammingengine\[a]lihanengine\dependencies\ode-0.14\include\ode\odecpp_collision.h(448): error C4996: 'dGeomTransformSetCleanup': was declared deprecated
+  g:\advanced game programming\advancedgameprogrammingengine\[a]lihanengine\dependencies\ode-0.14\include\ode\collision.h(1092): note: see declaration of 'dGeomTransformSetCleanup'
+g:\advanced game programming\advancedgameprogrammingengine\[a]lihanengine\dependencies\ode-0.14\include\ode\odecpp_collision.h(450): error C4996: 'dGeomTransformGetCleanup': was declared deprecated
+  g:\advanced game programming\advancedgameprogrammingengine\[a]lihanengine\dependencies\ode-0.14\include\ode\collision.h(1093): note: see declaration of 'dGeomTransformGetCleanup'
+g:\advanced game programming\advancedgameprogrammingengine\[a]lihanengine\dependencies\ode-0.14\include\ode\odecpp_collision.h(453): error C4996: 'dGeomTransformSetInfo': was declared deprecated
+  g:\advanced game programming\advancedgameprogrammingengine\[a]lihanengine\dependencies\ode-0.14\include\ode\collision.h(1094): note: see declaration of 'dGeomTransformSetInfo'
+g:\advanced game programming\advancedgameprogrammingengine\[a]lihanengine\dependencies\ode-0.14\include\ode\odecpp_collision.h(455): error C4996: 'dGeomTransformGetInfo': was declared deprecated
+  g:\advanced game programming\advancedgameprogrammingengine\[a]lihanengine\dependencies\ode-0.14\include\ode\collision.h(1095): note: see declaration of 'dGeomTransformGetInfo'
+g:\advanced game programming\advancedgameprogrammingengine\[a]lihanengine\dependencies\ode-0.14\include\ode\odecpp_collision.h(461): warning C4068: unknown pragma
+g:\advanced game programming\advancedgameprogrammingengine\[a]lihanengine\[a]lihanengine\gameobject.cpp(40): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+g:\advanced game programming\advancedgameprogrammingengine\[a]lihanengine\[a]lihanengine\gameobject.cpp(45): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  Generating Code...

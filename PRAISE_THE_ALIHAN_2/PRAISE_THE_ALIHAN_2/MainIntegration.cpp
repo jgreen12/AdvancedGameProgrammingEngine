@@ -8,6 +8,7 @@
 #include "renderer2d.h"
 #include "renderable2d.h"
 #include "simple2drenderer.h"
+#include "../Dependencies/Debugger/Logger.h"
 
 #include "Scene.h"
 #include "GameObject.h"
@@ -140,7 +141,28 @@ DWORD WINAPI Graphics_Udate(LPVOID vParam) {
 
 
 
-int main() {
+int main() 
+{
+
+	//Debugger Example Crap
+	Logger eh("test.txt");
+	
+	__try
+	{
+		int z = 0;
+		int x = 5;
+		int t = x / z;
+	}
+	__except (eh.ExpFilter(GetExceptionInformation(), GetExceptionCode()))
+	{
+
+	}
+
+	eh.OnOutput("Test");
+
+	
+	
+
 
 	//this was the crash problem
 	dInitODE();
