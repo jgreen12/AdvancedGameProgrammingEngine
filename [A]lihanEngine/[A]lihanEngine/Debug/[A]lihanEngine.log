@@ -1,6 +1,0 @@
-﻿  vec2.cpp
-LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
-LINK : warning LNK4098: defaultlib 'LIBCMT' conflicts with use of other libs; use /NODEFAULTLIB:library
-glew32s.lib(glew.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'glew32s.lib(glew.obj)' or at 'G:\Advanced Game Programming\AdvancedGameProgrammingEngine\[A]lihanEngine\Debug\vc120.pdb'; linking object as if no debug info
-  [A]lihanEngine.vcxproj -> G:\Advanced Game Programming\AdvancedGameProgrammingEngine\[A]lihanEngine\Debug\[A]lihanEngine.exe
-  [A]lihanEngine.vcxproj -> G:\Advanced Game Programming\AdvancedGameProgrammingEngine\[A]lihanEngine\Debug\[A]lihanEngine.pdb (Partial PDB)

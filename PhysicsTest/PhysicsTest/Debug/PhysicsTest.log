@@ -1,4 +1,0 @@
-﻿  main.cpp
-GameObject.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/OPT:LBR' specification
-  PhysicsTest.vcxproj -> G:\Advanced Game Programming\AdvancedGameProgrammingEngine\PhysicsTest\Debug\PhysicsTest.exe
-  PhysicsTest.vcxproj -> G:\Advanced Game Programming\AdvancedGameProgrammingEngine\PhysicsTest\Debug\PhysicsTest.pdb (Full PDB)
