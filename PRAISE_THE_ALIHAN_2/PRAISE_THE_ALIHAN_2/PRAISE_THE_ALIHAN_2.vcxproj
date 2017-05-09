@@ -68,11 +68,11 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>$(SolutionDir)Dependencies\GLFW\include;$(SolutionDir)Dependencies\GLEW\include;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)Resource_Managers;$(SolutionDir)Dependencies\GLFW\include;$(SolutionDir)Dependencies\GLEW\include;$(IncludePath)</IncludePath>
     <LibraryPath>$(SolutionDir)Dependencies\GLEW\lib;$(SolutionDir)Dependencies\GLFW\lib-vc2015;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <IncludePath>$(SolutionDir)Dependencies\GLFW\include;$(SolutionDir)Dependencies\GLEW\include;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)Resource_Managers;$(SolutionDir)Dependencies\GLFW\include;$(SolutionDir)Dependencies\GLEW\include;$(IncludePath)</IncludePath>
     <LibraryPath>$(SolutionDir)Dependencies\GLEW\lib;$(SolutionDir)Dependencies\GLFW\lib-vc2015;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -127,6 +127,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\Dependencies\Debugger\StackWalker.cpp" />
+    <ClCompile Include="..\Resource_Managers\Font_Manager.cpp" />
+    <ClCompile Include="..\Resource_Managers\Resource_Holder.cpp" />
+    <ClCompile Include="..\Resource_Managers\Sound_Manager.cpp" />
+    <ClCompile Include="..\Resource_Managers\Texture_Manager.cpp" />
     <ClCompile Include="buffer.cpp" />
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="indexbuffer.cpp" />
@@ -149,6 +153,11 @@
   <ItemGroup>
     <ClInclude Include="..\Dependencies\Debugger\Logger.h" />
     <ClInclude Include="..\Dependencies\Debugger\StackWalker.h" />
+    <ClInclude Include="..\Resource_Managers\Font_Manager.h" />
+    <ClInclude Include="..\Resource_Managers\Resource_Holder.h" />
+    <ClInclude Include="..\Resource_Managers\Resource_Manager.h" />
+    <ClInclude Include="..\Resource_Managers\Sound_Manager.h" />
+    <ClInclude Include="..\Resource_Managers\Texture_Manager.h" />
     <ClInclude Include="buffer.h" />
     <ClInclude Include="fileUtils.h" />
     <ClInclude Include="GameObject.h" />

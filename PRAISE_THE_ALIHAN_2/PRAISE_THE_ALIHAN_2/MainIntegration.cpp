@@ -10,6 +10,8 @@
 #include "simple2drenderer.h"
 #include "../Dependencies/Debugger/Logger.h"
 
+#include "Resource_Holder.h"
+
 #include "Scene.h"
 #include "GameObject.h"
 
@@ -151,12 +153,15 @@ int main()
 
 	//(*(s1->fullBeginIter))->setLinearVelocity(Vector2(1, 1));
 
-	for (s1->fullBeginIter = s1->fullListOfObjects.begin(); s1->fullBeginIter != s1->fullListOfObjects.end(); s1->fullBeginIter++) {
+	/*for (s1->fullBeginIter = s1->fullListOfObjects.begin(); s1->fullBeginIter != s1->fullListOfObjects.end(); s1->fullBeginIter++) {
 		//(*(s1->fullBeginIter))->setLinearVelocity(Vector2(1,1));
 		//(*(s1->fullBeginIter))->addForce(Vector2(10,10));
 		//(*(s1->fullBeginIter))->addRelativeForce(Vector2(10, 10));
 		//cout << (*(s1->fullBeginIter))->getLinearVelocity().getX();
-	}
+	}*/
+
+
+
 
 
 	DWORD graphWord;	//graphics thread reference
@@ -165,7 +170,29 @@ int main()
 	gameHandles[0] = CreateThread(NULL, 0, Physics_Update, NULL, 0, &physWord);		//create the thread for physics
 	gameHandles[1] = CreateThread(NULL, 0, Graphics_Udate, NULL, 0, &graphWord);	//create the thread for graphics
 	
+
+
+	sf::Music music;
+	
+
+	if (!music.openFromFile("../Res/Music/AerisPianoByTannerHelland.ogg"))		//This loads the song while also checking if it exists
+	{
+		std::cout << "Error" << std::endl;
+	}
+	
+	music.play();				//plays the music
+	
+
+	
+
+
+
+
+
 	WaitForMultipleObjects(2, gameHandles, TRUE, INFINITE);
+
+
+	music.stop();				//place this at the end in order to clear the music data
 
 	s1->RemoveAllObjects();
 	delete s1;

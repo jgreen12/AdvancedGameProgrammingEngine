@@ -60,6 +60,18 @@
     <ClCompile Include="..\Dependencies\Debugger\StackWalker.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\Resource_Managers\Font_Manager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Resource_Managers\Resource_Holder.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Resource_Managers\Sound_Manager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Resource_Managers\Texture_Manager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="basic.frag" />
@@ -124,6 +136,21 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\Dependencies\Debugger\StackWalker.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Resource_Managers\Font_Manager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Resource_Managers\Resource_Holder.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Resource_Managers\Resource_Manager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Resource_Managers\Sound_Manager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Resource_Managers\Texture_Manager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
