@@ -37,6 +37,10 @@ namespace prototype {
 
 				}
 
+				inline void Update() {
+
+				};
+
 		};
 	}
 }
