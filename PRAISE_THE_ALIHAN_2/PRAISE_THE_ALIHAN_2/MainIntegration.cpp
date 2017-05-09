@@ -147,7 +147,7 @@ int main()
 	//Debugger Example Crap
 	Logger eh("test.txt");
 	
-	__try
+	/*__try
 	{
 		int z = 0;
 		int x = 5;
@@ -157,7 +157,7 @@ int main()
 	{
 
 	}
-
+	*/
 	eh.OnOutput("Test");
 
 	
