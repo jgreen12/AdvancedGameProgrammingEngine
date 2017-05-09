@@ -1,29 +1,42 @@
-/*#pragma once
+#pragma once
 #include <iostream>
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
-
-
-#define MAX_KEYS 1024
-#define MAX_BUTTONS 32
+#include "window.h"
+#include <string>
 
 namespace prototype {
-	namespace input {
-		class Input {
-		private:
-			bool m_keys[MAX_KEYS];
-			bool m_buttons[MAX_BUTTONS];
-			double mx, my;
-		public:
-			bool isKeyPressed(unsigned int keyCode) const;
-			bool isMouseButtonPressed(unsigned int buttonCode) const;
-			void getMousePosition(double& x, double& y) const;
+	namespace graphics {
 
-		private:
-			bool init(GLFWwindow *window);
-			friend static void key_callback(GLFWwindow *window, int key, int scancode, int action, int mods);
-			friend static void mouse_button_callback(GLFWwindow *window, int button, int action, int mods);
-			friend static void cursor_position_callback(GLFWwindow *window, double xpos, double ypos);
+		class Input {
+			private:
+				Window *window;
+			public:
+				inline Input(Window *win) {
+					window = win;
+				}
+
+				inline int getButton(std::string button) {
+					if (button == "up")
+						return window->isKeyPressed(GLFW_KEY_UP);
+					if (button == "down")
+						return window->isKeyPressed(GLFW_KEY_DOWN);
+					if (button == "left")
+						return window->isKeyPressed(GLFW_KEY_LEFT);
+					if (button == "right")
+						return window->isKeyPressed(GLFW_KEY_RIGHT);
+					if (button == "jump")
+						return window->isKeyPressed(GLFW_KEY_SPACE);
+				}
+
+				inline int getAxis(std::string axis) {
+					if (axis == "horizontal")
+						return window->isKeyPressed(GLFW_KEY_RIGHT) - window->isKeyPressed(GLFW_KEY_LEFT);
+					if (axis == "vertical")
+						return window->isKeyPressed(GLFW_KEY_UP) - window->isKeyPressed(GLFW_KEY_DOWN);
+
+				}
+
 		};
 	}
-}*/
+}
