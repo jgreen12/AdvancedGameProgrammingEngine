@@ -1,6 +1,19 @@
-﻿  MainIntegration.cpp
-c:\program files (x86)\windows kits\8.1\include\shared\minwindef.h(130): warning C4005: 'APIENTRY': macro redefinition
-  c:\users\josh\documents\github\repos\advancedgameprogrammingengine\praise_the_alihan_2\dependencies\glfw\include\glfw\glfw3.h(98): note: see previous definition of 'APIENTRY'
-c:\users\josh\documents\github\repos\advancedgameprogrammingengine\praise_the_alihan_2\dependencies\debugger\stackwalker.h(122): warning C4091: 'typedef ': ignored on left of 'StackWalker::CallstackEntryType' when no variable is declared
+﻿  Scene.cpp
+c:\users\josh\documents\github\repos\advancedgameprogrammingengine\praise_the_alihan_2\dependencies\ode-0.14\include\ode\odecpp_collision.h(386): warning C4068: unknown pragma
+c:\users\josh\documents\github\repos\advancedgameprogrammingengine\praise_the_alihan_2\dependencies\ode-0.14\include\ode\odecpp_collision.h(387): warning C4068: unknown pragma
+c:\users\josh\documents\github\repos\advancedgameprogrammingengine\praise_the_alihan_2\dependencies\ode-0.14\include\ode\odecpp_collision.h(399): warning C4068: unknown pragma
+c:\users\josh\documents\github\repos\advancedgameprogrammingengine\praise_the_alihan_2\dependencies\ode-0.14\include\ode\odecpp_collision.h(421): warning C4068: unknown pragma
+c:\users\josh\documents\github\repos\advancedgameprogrammingengine\praise_the_alihan_2\dependencies\ode-0.14\include\ode\odecpp_collision.h(422): warning C4068: unknown pragma
+c:\users\josh\documents\github\repos\advancedgameprogrammingengine\praise_the_alihan_2\dependencies\ode-0.14\include\ode\odecpp_collision.h(461): warning C4068: unknown pragma
+c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\math.h(1001): warning C4005: 'M_PI': macro redefinition
+  c:\users\josh\documents\github\repos\advancedgameprogrammingengine\praise_the_alihan_2\dependencies\ode-0.14\include\ode\common.h(44): note: see previous definition of 'M_PI'
+c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\math.h(1002): warning C4005: 'M_PI_2': macro redefinition
+  c:\users\josh\documents\github\repos\advancedgameprogrammingengine\praise_the_alihan_2\dependencies\ode-0.14\include\ode\common.h(47): note: see previous definition of 'M_PI_2'
+c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\math.h(1008): warning C4005: 'M_SQRT1_2': macro redefinition
+  c:\users\josh\documents\github\repos\advancedgameprogrammingengine\praise_the_alihan_2\dependencies\ode-0.14\include\ode\common.h(50): note: see previous definition of 'M_SQRT1_2'
+c:\users\josh\documents\github\repos\advancedgameprogrammingengine\praise_the_alihan_2\praise_the_alihan_2\scene.cpp(57): warning C4244: 'argument': conversion from 'double' to 'const float', possible loss of data
+c:\users\josh\documents\github\repos\advancedgameprogrammingengine\praise_the_alihan_2\praise_the_alihan_2\scene.cpp(58): warning C4244: 'argument': conversion from 'double' to 'const float', possible loss of data
+c:\users\josh\documents\github\repos\advancedgameprogrammingengine\praise_the_alihan_2\praise_the_alihan_2\scene.cpp(96): warning C4715: 'Scene::getWorldID': not all control paths return a value
+c:\users\josh\documents\github\repos\advancedgameprogrammingengine\praise_the_alihan_2\praise_the_alihan_2\scene.cpp(104): warning C4715: 'Scene::getSpaceID': not all control paths return a value
   PRAISE_THE_ALIHAN_2.vcxproj -> C:\Users\Josh\Documents\GitHub\repos\AdvancedGameProgrammingEngine\PRAISE_THE_ALIHAN_2\Debug\PRAISE_THE_ALIHAN_2.exe
   PRAISE_THE_ALIHAN_2.vcxproj -> C:\Users\Josh\Documents\GitHub\repos\AdvancedGameProgrammingEngine\PRAISE_THE_ALIHAN_2\Debug\PRAISE_THE_ALIHAN_2.pdb (Partial PDB)

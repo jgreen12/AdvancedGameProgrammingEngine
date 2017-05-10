@@ -53,12 +53,12 @@ namespace prototype {
 			inline Shader& getShader() const { return m_Shader; }
 
 			inline const maths::vec3& getPosition() const { return m_Position; }
-			inline const maths::vec2& getSize() const { return m_Size; }
+			maths::vec2& getSize() { return m_Size; }
 			inline const maths::vec4& getColor() const { return m_Color; }
 
 			inline void update(maths::vec3 translation) {
 				m_Position = translation;
-				std::cout << "Translation: " << m_Position << std::endl;
+				//std::cout << "Translation: " << m_Position << std::endl;
 			}
 
 			inline Renderable2D operator=(const Renderable2D& other) {

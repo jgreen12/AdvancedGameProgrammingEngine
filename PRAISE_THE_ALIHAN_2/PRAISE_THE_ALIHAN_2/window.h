@@ -16,12 +16,12 @@ namespace prototype {
 			GLFWwindow* m_window;
 			bool m_closed;
 
-			bool m_keys[MAX_KEYS];
 			bool m_buttons[MAX_BUTTONS];
 			double mx, my;
 
 
 		public:
+			bool m_keys[MAX_KEYS];
 			Window(const char *name, int width, int height);
 			~Window();
 			bool closed() const;

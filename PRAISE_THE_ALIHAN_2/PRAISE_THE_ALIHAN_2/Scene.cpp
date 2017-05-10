@@ -24,37 +24,45 @@ using namespace std;
 void Scene::LoadFromFile(string FileName) {
 	ifstream objLoader(FileName);
 	string line;
+	int skip1 = 0;
 	while (getline(objLoader, line)) {
-		stringstream linestream(line);
-		string cell[7];
-		int counter = 0;
-		while (getline(linestream, cell[counter], ',')) {
-			counter++;
+
+		if (skip1 > 0) {
+			stringstream linestream(line);
+			string cell[7];
+			int counter = 0;
+			while (getline(linestream, cell[counter], ',')) {
+				counter++;
+			}
+
+			istringstream sizeStr(cell[5]);
+			string sizeArr[2];
+			int sizeCount = 0;
+			while (getline(sizeStr, sizeArr[sizeCount], ' ')) {
+				sizeCount++;
+			}
+			istringstream colorStr(cell[6]);
+			string colorArr[4];
+			int colorCount = 0;
+			while (getline(colorStr, colorArr[colorCount], ' ')) {
+				colorCount++;
+			}
+			NumOfObjects++;
+			int id = NumOfObjects;
+			string name = cell[0];
+			double xPos = atof(cell[1].c_str());
+			double yPos = atof(cell[2].c_str());
+			int dynamic = atoi(cell[3].c_str());
+			int graphics = atoi(cell[4].c_str());
+			prototype::maths::vec2 size(atof(sizeArr[0].c_str()), atof(sizeArr[1].c_str()));
+			prototype::maths::vec4 color(atof(colorArr[0].c_str()), atof(colorArr[1].c_str()), atof(colorArr[2].c_str()), atof(colorArr[3].c_str()));
+			GameObject g(id, name, xPos, yPos, dynamic, graphics, color, size);
+			AddObjectVal(g);
 		}
 
-		istringstream sizeStr(cell[5]);
-		string sizeArr[2];
-		int sizeCount = 0;
-		while (getline(sizeStr, sizeArr[sizeCount], ' ')) {
-			sizeCount++;
+		else {
+			skip1++;
 		}
-		istringstream colorStr(cell[6]);
-		string colorArr[4];
-		int colorCount = 0;
-		while (getline(colorStr, colorArr[colorCount], ' ')) {
-			colorCount++;
-		}
-		NumOfObjects++;
-		int id = NumOfObjects;
-		string name = cell[0];
-		double xPos = atof(cell[1].c_str());
-		double yPos = atof(cell[2].c_str());
-		int dynamic = atoi(cell[3].c_str());
-		int graphics = atoi(cell[4].c_str());
-		prototype::maths::vec2 size(atof(sizeArr[0].c_str()), atof(sizeArr[1].c_str()));
-		prototype::maths::vec4 color( atof(colorArr[0].c_str()), atof(colorArr[1].c_str()), atof(colorArr[2].c_str()), atof(colorArr[3].c_str()));
-		GameObject g(id, name, xPos, yPos, dynamic, graphics, color, size);
-		AddObjectVal(g);
 	}
 	objLoader.close();
 }

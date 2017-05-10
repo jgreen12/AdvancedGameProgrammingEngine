@@ -61,6 +61,7 @@ namespace prototype {
 			if (keyCode >= MAX_KEYS)
 				return false;
 			return m_keys[keyCode];
+//			return true;
 		}
 
 		bool Window::isMouseButtonPressed(unsigned int button) const {

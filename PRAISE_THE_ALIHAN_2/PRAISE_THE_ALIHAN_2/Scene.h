@@ -51,6 +51,7 @@ public:
 	list<GameObject*> graphicsList;
 	list<GameObject*>::iterator graphicsIter;
 	list<GameObject>::iterator FullListGraphics;
+	list<GameObject>::iterator PlayerObjectIt;
 
 	Scene();
 	void RemoveAllObjects();

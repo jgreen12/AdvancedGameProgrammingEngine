@@ -10,8 +10,10 @@ namespace prototype {
 
 		class Input {
 			private:
-				Window *window;
+				
 			public:
+				Window *window;
+
 				inline Input(Window *win) {
 					window = win;
 				}
@@ -27,6 +29,15 @@ namespace prototype {
 						return window->isKeyPressed(GLFW_KEY_RIGHT);
 					if (button == "jump")
 						return window->isKeyPressed(GLFW_KEY_SPACE);
+
+					//added for physics functionality testing for Alihan testing
+					if (button == "k") {
+						return window->isKeyPressed(GLFW_KEY_K);
+					}
+					
+
+
+
 				}
 
 				inline int getAxis(std::string axis) {

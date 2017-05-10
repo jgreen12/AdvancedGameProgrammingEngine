@@ -44,10 +44,10 @@ protected:
 	string Name; //name of the object
 	string Type; //a tag of the object, could be used to find all objects of a certain type, and apply an effect dynamically or something
 
-	int ID;
 
 public:
 
+	int ID;
 	Body* rigidBody;
 
 	bool operator==(const GameObject& poop) const;

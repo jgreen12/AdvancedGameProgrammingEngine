@@ -11,6 +11,7 @@
 #include "../Dependencies/Debugger/Logger.h"
 
 #include "Resource_Holder.h"
+#include "../Resource_Managers/Resource_Manager.h"
 
 #include "Scene.h"
 #include "GameObject.h"
@@ -40,28 +41,34 @@ prototype::graphics::Input inp(window);
 DWORD WINAPI Physics_Update(LPVOID vParam) {
 	Timer t1 (120);
 
+	//what?
+	//s1->fullBeginIter = s1->fullListOfObjects.begin();
+	//s1->fullBeginIter->setMass(1000);
+
+	int ayy = 0;
+	Vector2 thisAintSomeShit;
+	double x, y;
+	s1->PlayerObjectIt = s1->fullListOfObjects.begin();
+	for (s1->fullBeginIter = s1->fullListOfObjects.begin(); s1->fullBeginIter != s1->fullListOfObjects.end(); s1->fullBeginIter++)
+	{
+		
+		if (ayy < 5)	//THIS VALUE NEEDS TO BE CHANGED BASED ON THE NUMBER OF THE GAMEOBJECTS IN THE SCENE
+		{ // THIS IS A TEMPORARY FIX TO MAKE THE 'PLAIN' STATIC
+			s1->fullBeginIter->setKinematic();
+
+		}
+
+		ayy++;
+	}
 	
-	s1->fullBeginIter = s1->fullListOfObjects.begin();
-	s1->fullBeginIter->setMass(1000);
-	
-	s1->fullBeginIter = s1->fullListOfObjects.begin()++;
-	s1->fullBeginIter->setKinematic();
 
 	s1->setGravity(Vector2(0, -1));
 
+		
 	while ( physics_running ) {
 		
 		//s1->safeStepWorld( (1.0/120.0) );
 		s1->quickStepWorld((1.0 / 120.0));
-		
-		//for (s1->fullBeginIter = s1->fullListOfObjects.begin(); s1->fullBeginIter != s1->fullListOfObjects.end(); s1->fullBeginIter++) {
-		//	if (s1->fullBeginIter->GetDynamic() == 1) {
-		//		
-		//		//s1->fullBeginIter->setAffectedByGravity(true);
-		//		//cout << s1->fullBeginIter->RenderPassX() << " " << s1->fullBeginIter->RenderPassY() << endl;
-		//		//s1->fullBeginIter->addForce(Vector2(10, 10));
-		//	}
-		//}
 
 		t1.update();
 		//Sleep(8);
@@ -90,12 +97,7 @@ DWORD WINAPI Graphics_Udate(LPVOID vParam) {
 	shader.setUniformMat4("pr_matrix", ortho);
 	shader.setUniformMat4("ml_matrix", mat4::translation(vec3(4, 3, 0)));
 	
-	//for (s1->graphicsIter = s1->graphicsList.begin(); s1->graphicsIter != s1->graphicsList.end(); s1->graphicsIter++) {	//position,	SIZE oh wait no, he meant SCALE, COLOR
-	//	(*(s1->graphicsIter))->initializeRenderable(shader);
-	//}
-	//for (s1->graphicsIter = s1->graphicsList.begin(); s1->graphicsIter != s1->graphicsList.end(); s1->graphicsIter++) {	//position,	SIZE oh wait no, he meant SCALE, COLOR
-	//	s1->graphicsIter->initializeRenderable(shader);
-	//}
+
 
 	for (s1->FullListGraphics = s1->fullListOfObjects.begin(); s1->FullListGraphics != s1->fullListOfObjects.end(); s1->FullListGraphics++) {	//position,	SIZE oh wait no, he meant SCALE, COLOR
 		s1->FullListGraphics->initializeRenderable(shader);
@@ -110,32 +112,52 @@ DWORD WINAPI Graphics_Udate(LPVOID vParam) {
 	//changed to global pointer, changed '.' to '->'
 	//example framework change condition eventually.
 	double x, y;
+
+
+
+
+	/*for (int i = 0; i < 15; i++) {
+		cout << window->m_keys[i] << endl;
+	}*/
+
+
 	while (!window->closed()) {
 		window->clear();
 		window->getMousePosition(x, y);
 		shader.setUniform2f("light_pos", vec2((float)(x * 16.0f / 1280.0f), (float)(9.0f - y * 9.0f / 720.0f)));
 
-		//for (s1->graphicsIter = s1->graphicsList.begin(); s1->graphicsIter != s1->graphicsList.end(); s1->graphicsIter++) {
-		//	(*(s1->graphicsIter))->sprite->update(prototype::maths::vec3((*(s1->graphicsIter))->RenderPassX(), (*(s1->graphicsIter))->RenderPassY(), 0));
-		//	//cout << "Render Pass: " << s1->graphicsIter->RenderPassX() << " " << s1->graphicsIter->RenderPassY() << endl;
-		//	//cout << "Get Pass: " << s1->graphicsIter->GetPosX() << " " << s1->graphicsIter->GetPosY() << endl;
-		//	renderer.submit((*(s1->graphicsIter))->sprite);
-		//}
-		//for (s1->graphicsIter = s1->graphicsList.begin(); s1->graphicsIter != s1->graphicsList.end(); s1->graphicsIter++) {
-		//	s1->graphicsIter->sprite->update(prototype::maths::vec3(s1->graphicsIter->RenderPassX(), s1->graphicsIter->RenderPassY(), 0));
-		//	//cout << s1->graphicsIter->sprite->getPosition() << endl;
-		//	renderer.submit(s1->graphicsIter->sprite);
-		//}
+
+ 
+
+		for (s1->PlayerObjectIt = s1->fullListOfObjects.begin(); s1->PlayerObjectIt != s1->fullListOfObjects.end(); s1->PlayerObjectIt++) {
+			if (s1->PlayerObjectIt->ID == 1) {
+				break;
+			}
+		}
+
+		if (window->isKeyPressed(GLFW_KEY_RIGHT)) {
+			s1->PlayerObjectIt->addForce(Vector2(10, 0));
+		}
+		if (window->isKeyPressed(GLFW_KEY_LEFT)) {
+			s1->PlayerObjectIt->addForce(Vector2(-10, 0));
+		}
+		if (window->isKeyPressed(GLFW_KEY_UP)) {
+			s1->PlayerObjectIt->addForce(Vector2(0, 10));
+		}
+		if (window->isKeyPressed(GLFW_KEY_DOWN)) {
+			s1->PlayerObjectIt->addForce(Vector2(0, -10));
+		}
+
+		
+
+
 		for (s1->FullListGraphics = s1->fullListOfObjects.begin(); s1->FullListGraphics != s1->fullListOfObjects.end(); s1->FullListGraphics++) {
 			if (s1->FullListGraphics->GetVisible() == 1) {
 				s1->FullListGraphics->sprite->update(prototype::maths::vec3(s1->FullListGraphics->RenderPassX(), s1->FullListGraphics->RenderPassY(), 0));
 				//cout << s1->graphicsIter->sprite->getPosition() << endl;
 				renderer.submit(s1->FullListGraphics->sprite);
-			}
-			
-		}
-
-		
+			}	
+		}	
 		renderer.flush();
 		window->update();
 
@@ -147,7 +169,6 @@ DWORD WINAPI Graphics_Udate(LPVOID vParam) {
 	return 0;
 
 }
-
 
 // prototype::maths::vec2(4, 4), prototype::maths::vec4(1, 1, 1, 1)
 
@@ -170,9 +191,6 @@ int main()
 	*/
 	eh.OnOutput("Test");
 
-	
-	
-
 
 	//this was the crash problem
 	dInitODE();
@@ -186,18 +204,7 @@ int main()
 	s1->setBasicCallback(&nearCallback);
 
 	s1->LoadFromFile("Scene1.txt");
-	
-	
-	
-	//GameObject g(s1->NumOfObjects++);
-	//
-	//s1->AddObject(g);
-	//g.SetPosX(5);
-	//g.SetPosY(5);
-	//g.RegisterAsRigidBody(s1->getWorldID()); 
-	//g.color = prototype::maths::vec4(1,1,1,1);
-	//g.size = prototype::maths::vec2(4,4);
-	
+
 	
 	s1->fullBeginIter = s1->fullListOfObjects.begin();
 	//s1->fullBeginIter->addForce(Vector2(5,0));
@@ -206,64 +213,10 @@ int main()
 		if (s1->fullBeginIter->GetDynamic() == 1) {
 			s1->fullBeginIter->RegisterAsRigidBody(s1->getWorldID(), s1->getSpaceID());
 			//s1->fullBeginIter->setAffectedByGravity(true);
-			cout << s1->fullBeginIter->isAffectedByGravity() << endl;
+			//cout << s1->fullBeginIter->isAffectedByGravity() << endl;
 			//s1->fullBeginIter->addForce(Vector2(10, 10));
 		}
 	}
-	//s1->setGravity(Vector2(0, -.1));
-	//cout << (*(s1->fullBeginIter))->GetDynamic();
-	//
-	//(*(s1->fullBeginIter))->RegisterAsRigidBody(s1->getWorldID());
-
-	//for (s1->fullBeginIter = s1->fullListOfObjects.begin(); s1->fullBeginIter != s1->fullListOfObjects.end(); s1->fullBeginIter++) {
-	//	if ((*(s1->fullBeginIter))->GetDynamic() == 1) {
-	//		(*(s1->fullBeginIter))->RegisterAsRigidBody(s1->getWorldID());
-	//	}
-	////(*(s1->fullBeginIter))->addForce(Vector2(10,10));
-	////(*(s1->fullBeginIter))->addRelativeForce(Vector2(10, 10));
-	////cout << (*(s1->fullBeginIter))->getLinearVelocity().getX();
-	//}
-
-
-	//s1->setGravity(Vector2(0, -10));
-
-	//GameObject g(s1->NumOfObjects++);
-	//
-	//s1->AddObject(g);
-	//g.SetPosX(5);
-	//g.SetPosY(5);
-	//g.RegisterAsRigidBody(s1->getWorldID()); 
-	//g.color = prototype::maths::vec4(1,1,1,1);
-	//g.size = prototype::maths::vec2(4,4);
-
-	/*GameObject g2(s1->NumOfObjects++);
-	s1->AddObject(g2);
-	g2.SetPosX(5);
-	g2.SetPosY(2);
-	g2.RegisterAsRigidBody(s1->getWorldID());
-	g2.color = prototype::maths::vec4(5, 0, 10, 1);
-	g2.size = prototype::maths::vec2(2, 4);
-
-	g.setLinearVelocity(Vector2(0, -1));
-	*/
-	// prototype::maths::vec2(4, 4), prototype::maths::vec4(1, 1, 1, 1)
-
-
-	//g.setLinearVelocity(Vector2(1, 1));
-	//g.addForce(Vector2(5, 5));
-	
-	//cout << g.getLinearVelocity().getX();
-
-	//(*(s1->fullBeginIter))->setLinearVelocity(Vector2(1, 1));
-
-	/*for (s1->fullBeginIter = s1->fullListOfObjects.begin(); s1->fullBeginIter != s1->fullListOfObjects.end(); s1->fullBeginIter++) {
-		//(*(s1->fullBeginIter))->setLinearVelocity(Vector2(1,1));
-		//(*(s1->fullBeginIter))->addForce(Vector2(10,10));
-		//(*(s1->fullBeginIter))->addRelativeForce(Vector2(10, 10));
-		//cout << (*(s1->fullBeginIter))->getLinearVelocity().getX();
-	}*/
-
-
 
 
 
@@ -272,7 +225,6 @@ int main()
 	HANDLE gameHandles[2]; //handles for the thread handle
 	gameHandles[0] = CreateThread(NULL, 0, Physics_Update, NULL, 0, &physWord);		//create the thread for physics
 	gameHandles[1] = CreateThread(NULL, 0, Graphics_Udate, NULL, 0, &graphWord);	//create the thread for graphics
-	
 
 
 	sf::Music music;
@@ -282,15 +234,9 @@ int main()
 	{
 		std::cout << "Error" << std::endl;
 	}
+
 	
 	music.play();				//plays the music
-	
-
-	
-
-
-
-
 
 	WaitForMultipleObjects(2, gameHandles, TRUE, INFINITE);
 
@@ -302,7 +248,7 @@ int main()
 
 
 	char junk;
-	cin >> junk;
+	std::cin >> junk;
 	
 	return 0;
 }
