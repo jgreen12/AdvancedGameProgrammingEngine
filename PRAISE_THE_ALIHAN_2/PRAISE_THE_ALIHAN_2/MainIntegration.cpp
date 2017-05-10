@@ -51,6 +51,11 @@ DWORD WINAPI Physics_Update(LPVOID vParam) {
 }
 
 
+static void nearCallback(void*, dGeomID o1, dGeomID o2)
+{
+	s1->basicCollisionCallback(0, o1, o2);
+}
+
 DWORD WINAPI Graphics_Udate(LPVOID vParam) {
 	Timer t2;
 	using namespace prototype;
@@ -143,6 +148,9 @@ int main()
 	s1 = new Scene();
 	s1->RegisterAsWorld();
 	s1->setLinearDamping(0);
+	s1->setGravity(Vector2(0, -10));
+
+	s1->setBasicCallback(&nearCallback);
 
 	s1->LoadFromFile("Scene1.txt");
 	
@@ -163,7 +171,8 @@ int main()
 
 	for (s1->fullBeginIter = s1->fullListOfObjects.begin(); s1->fullBeginIter != s1->fullListOfObjects.end(); s1->fullBeginIter++) {
 		if (s1->fullBeginIter->GetDynamic() == 1) {
-			s1->fullBeginIter->RegisterAsRigidBody(s1->getWorldID());
+			s1->fullBeginIter->RegisterAsRigidBody(s1->getWorldID(), s1->getSpaceID());
+			s1->fullBeginIter->setAffectedByGravity(true);
 		}
 	}
 

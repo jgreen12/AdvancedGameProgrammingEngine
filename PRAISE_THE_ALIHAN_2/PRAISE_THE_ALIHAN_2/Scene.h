@@ -66,7 +66,11 @@ public:
 	void RegisterAsWorld(void);
 	void DeRegisterAsWorld(void);
 
+	void setBasicCallback(dNearCallback* function);
+	void basicCollisionCallback(void*, dGeomID, dGeomID);
+
 	dWorldID getWorldID(void);
+	dSpaceID getSpaceID(void);
 
 	void setGravity(double x, double y);
 	void setGravity(Vector2 vector);

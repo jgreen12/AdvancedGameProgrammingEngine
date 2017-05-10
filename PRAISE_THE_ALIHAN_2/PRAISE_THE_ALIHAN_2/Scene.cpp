@@ -87,6 +87,30 @@ dWorldID Scene::getWorldID(void)
 	}
 }
 
+dSpaceID Scene::getSpaceID(void)
+{
+	if (PhysicsEnabled)
+	{
+		return physicsWorld->getSpaceID();
+	}
+}
+
+void Scene::basicCollisionCallback(void*, dGeomID o1, dGeomID o2)
+{
+	if (PhysicsEnabled)
+	{
+		physicsWorld->basicCollisionCallback(0, o1, o2);
+	}
+}
+
+void Scene::setBasicCallback(dNearCallback* function)
+{
+	if (PhysicsEnabled)
+	{
+		physicsWorld->setBasicCallback(function);
+	}
+}
+
 void Scene::setGravity(Vector2 gravity)
 {
 	if (PhysicsEnabled)

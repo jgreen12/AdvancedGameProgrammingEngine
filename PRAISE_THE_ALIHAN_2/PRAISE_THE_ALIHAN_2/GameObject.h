@@ -87,7 +87,7 @@ public:
 	//Physics Stuff
 	bool PhysicsEnabled = false;
 
-	void RegisterAsRigidBody(dWorldID worldID);
+	void RegisterAsRigidBody(dWorldID worldID, dSpaceID spaceID);
 	void DeRegisterAsRigidBody(void);
 
 	void setMass(double mass);

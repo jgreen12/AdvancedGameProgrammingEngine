@@ -138,9 +138,9 @@ void GameObject::SetPosY(double newY)
 
 
 //Physics Stuff
-void GameObject::RegisterAsRigidBody(dWorldID worldID)
+void GameObject::RegisterAsRigidBody(dWorldID worldID, dSpaceID spaceID)
 {
-	rigidBody = new Body(worldID);
+	rigidBody = new Body(worldID, spaceID);
 	rigidBody->setPosition(Vector3(GetPosX(), GetPosY(), 0));
 	this->PhysicsEnabled = true;
 	
