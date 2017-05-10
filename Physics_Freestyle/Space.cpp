@@ -5,11 +5,11 @@ Space::Space(void)
 {
 	//this->id = dSimpleSpaceCreate(this->id);
 
-	this->space = new dHashSpace();
+	//this->space = new dHashSpace();
 
 
 
-	//this->space = new dSimpleSpace();
+	this->space = new dSimpleSpace();
 }
 
 Space::~Space(void)
@@ -21,8 +21,9 @@ Space::~Space(void)
 dSpaceID Space::getSpaceID(void)
 {
 	//return this->id;
-	dSpaceID dafuq;
+	//dSpaceID dafuq;
 
-	dafuq = this->space->getSpace();
-	return dafuq;
+	//dafuq = this->space->getSpace();
+	return this->space->id();
+	//return dafuq;
 }

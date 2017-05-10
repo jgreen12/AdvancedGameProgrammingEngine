@@ -9,7 +9,7 @@ class Space
 {
 	private:
 		//dSpaceID id;
-		dHashSpace* space;
+		dSimpleSpace* space;
 
 
 	public:

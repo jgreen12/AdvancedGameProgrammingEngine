@@ -13,6 +13,10 @@ class World
 	private:
 		dWorldID worldID;
 		Space* space;
+		dJointGroupID groupID;
+		dNearCallback* x;
+
+		
 
 
 	public:
@@ -54,6 +58,9 @@ class World
 		void setContactSurfaceLayer(dReal depth);
 
 		void physicsStateToFile(FILE* file);
+
+		void setBasicCallback(dNearCallback* function);
+		void basicCollisionCallback(void*, dGeomID, dGeomID);
 		
 };
 

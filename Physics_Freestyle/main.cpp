@@ -11,6 +11,11 @@ double verticies[] = {
 	4, 0, 0
 };
 
+static void nearCallback(void*, dGeomID o1, dGeomID o2)
+{
+	world->basicCollisionCallback(0, o1, o2);
+}
+
 
 int main(void)
 {
@@ -18,28 +23,31 @@ int main(void)
 
 	world = new World();
 
+	world->setBasicCallback(&nearCallback);
 
-	world->physicsStateToFile(stdout);
+	//world->physicsStateToFile(stdout);
 
 	world->set3DGravity(Vector3(0, -10, 0));
 
-	world->physicsStateToFile(stdout);
+	//world->physicsStateToFile(stdout);
 
 	Body* body = new Body(world->getWorldID(), world->getSpaceID());
 	Body* otherBody = new Body(world->getWorldID(), world->getSpaceID());
 
-	body->setBoxLengths(100, 2, 0);
-	otherBody->setBoxLengths(2, 2, 0);
+	body->setBoxLengths(.2, .2, .2);
+	otherBody->setBoxLengths(.2, .2, .2);
 
-	otherBody->setMass(100);
+	otherBody->setMass(1);
 
 	printf("mass: %f\n", otherBody->getMass());
 
 	body->setPosition(Vector3(0, 0, 0));
-	otherBody->setPosition(Vector3(0, 10, 0));
+	otherBody->setPosition(Vector3(0, 1, 0));
 
 	body->setAffectedByGravity(0);
 	otherBody->setAffectedByGravity(1);
+
+	body->setKinematic();
 
 	Vector3* force = new Vector3(10, 0, 0);
 	Vector3* backForce = new Vector3(-5, 0, 0);
@@ -56,7 +64,7 @@ int main(void)
 
 		printf("Other Position: %f, %f, %f\n", falling.getX(), falling.getY(), falling.getZ());
 
-		world->safeStepWorld((1.0/120.0));
+		world->quickStepWorld((1.0/120.0));
 	}
 
 	world->physicsStateToFile(stdout);
