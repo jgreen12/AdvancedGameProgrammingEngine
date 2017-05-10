@@ -140,6 +140,7 @@
     <ClCompile Include="shader.cpp" />
     <ClCompile Include="simple2drenderer.cpp" />
     <ClCompile Include="MainIntegration.cpp" />
+    <ClCompile Include="timer.cpp" />
     <ClCompile Include="vec2.cpp" />
     <ClCompile Include="vec3.cpp" />
     <ClCompile Include="vec4.cpp" />
@@ -171,6 +172,7 @@
     <ClInclude Include="Scene.h" />
     <ClInclude Include="shader.h" />
     <ClInclude Include="simple2drenderer.h" />
+    <ClInclude Include="Timer.h" />
     <ClInclude Include="vec2.h" />
     <ClInclude Include="vec3.h" />
     <ClInclude Include="vec4.h" />

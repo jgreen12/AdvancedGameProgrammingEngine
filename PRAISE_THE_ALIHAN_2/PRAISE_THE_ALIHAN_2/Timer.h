@@ -9,12 +9,14 @@ private:
 	int target;
 	int prev;
 
-	Timer();
+	
 
-	Timer(clock_t targetFPS);
+	
 
 	clock_t deltaTime();
 
 public:
+	Timer();
+	Timer(clock_t targetFPS);
 	void update(); //calls a sleep function to ensure consistent frame rate
 };

@@ -27,6 +27,6 @@
 			Sleep(target - deltaTime());
 		else if (target < deltaTime())
 			Sleep(deltaTime() - target);
-		std::cout << prev << std::endl;
+		//std::cout << prev << std::endl;
 		prev = clock();
 	}

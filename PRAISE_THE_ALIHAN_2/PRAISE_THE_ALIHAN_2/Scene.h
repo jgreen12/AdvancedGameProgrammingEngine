@@ -38,19 +38,26 @@ protected:
 
 
 public:
-
+	void AddObjectVal(GameObject g);
 	void LoadFromFile(string FilePath);
 
-	list<GameObject*> fullListOfObjects;
+	/*list<GameObject*> fullListOfObjects;
 	list<GameObject*> graphicsList;
 	list<GameObject*>::iterator fullBeginIter;
-	list<GameObject*>::iterator graphicsIter;
+	list<GameObject*>::iterator graphicsIter;*/
+
+	list<GameObject> fullListOfObjects;
+	list<GameObject> graphicsList;
+	list<GameObject>::iterator fullBeginIter;
+	list<GameObject>::iterator graphicsIter;
 
 	Scene();
 	void RemoveAllObjects();
-	void AddObject(GameObject &g);
+	//void AddObject(GameObject &g);
+	void AddObject(GameObject g);
 	void UpdateObjects();
-	void RemoveObject(GameObject &g);
+	//void RemoveObject(GameObject &g);
+	void RemoveObject(GameObject g);
 
 	int NumOfObjects;
 	//Physics Stuff

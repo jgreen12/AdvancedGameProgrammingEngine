@@ -15,6 +15,9 @@
 #include "Scene.h"
 #include "GameObject.h"
 
+
+#include "Timer.h"
+
 #include <Windows.h>
 
 #pragma warning(disable : 4996)
@@ -33,18 +36,21 @@ prototype::graphics::Window* window;
 //60 fps mofo
 
 DWORD WINAPI Physics_Update(LPVOID vParam) {
+	Timer t1 (120);
+
 	while ( physics_running ) {
 		
 		s1->safeStepWorld( (1.0/120.0) );
 		
 
-		Sleep(8);
+		t1.update();
 	}
 	return 0;
 }
 
 
 DWORD WINAPI Graphics_Udate(LPVOID vParam) {
+	Timer t2;
 	using namespace prototype;
 	using namespace graphics;
 	using namespace maths;
@@ -58,8 +64,11 @@ DWORD WINAPI Graphics_Udate(LPVOID vParam) {
 	shader.setUniformMat4("pr_matrix", ortho);
 	shader.setUniformMat4("ml_matrix", mat4::translation(vec3(4, 3, 0)));
 	
+	//for (s1->graphicsIter = s1->graphicsList.begin(); s1->graphicsIter != s1->graphicsList.end(); s1->graphicsIter++) {	//position,	SIZE oh wait no, he meant SCALE, COLOR
+	//	(*(s1->graphicsIter))->initializeRenderable(shader);
+	//}
 	for (s1->graphicsIter = s1->graphicsList.begin(); s1->graphicsIter != s1->graphicsList.end(); s1->graphicsIter++) {	//position,	SIZE oh wait no, he meant SCALE, COLOR
-		(*(s1->graphicsIter))->initializeRenderable(shader);
+		s1->graphicsIter->initializeRenderable(shader);
 	}
 
 	Simple2DRenderer renderer;
@@ -75,18 +84,22 @@ DWORD WINAPI Graphics_Udate(LPVOID vParam) {
 		window->getMousePosition(x, y);
 		shader.setUniform2f("light_pos", vec2((float)(x * 16.0f / 1280.0f), (float)(9.0f - y * 9.0f / 720.0f)));
 
+		//for (s1->graphicsIter = s1->graphicsList.begin(); s1->graphicsIter != s1->graphicsList.end(); s1->graphicsIter++) {
+		//	(*(s1->graphicsIter))->sprite->update(prototype::maths::vec3((*(s1->graphicsIter))->RenderPassX(), (*(s1->graphicsIter))->RenderPassY(), 0));
+		//	//cout << "Render Pass: " << s1->graphicsIter->RenderPassX() << " " << s1->graphicsIter->RenderPassY() << endl;
+		//	//cout << "Get Pass: " << s1->graphicsIter->GetPosX() << " " << s1->graphicsIter->GetPosY() << endl;
+		//	renderer.submit((*(s1->graphicsIter))->sprite);
+		//}
 		for (s1->graphicsIter = s1->graphicsList.begin(); s1->graphicsIter != s1->graphicsList.end(); s1->graphicsIter++) {
-			(*(s1->graphicsIter))->sprite->update(prototype::maths::vec3((*(s1->graphicsIter))->RenderPassX(), (*(s1->graphicsIter))->RenderPassY(), 0));
-			//cout << "Render Pass: " << s1->graphicsIter->RenderPassX() << " " << s1->graphicsIter->RenderPassY() << endl;
-			//cout << "Get Pass: " << s1->graphicsIter->GetPosX() << " " << s1->graphicsIter->GetPosY() << endl;
-			renderer.submit((*(s1->graphicsIter))->sprite);
+			s1->graphicsIter->sprite->update(prototype::maths::vec3(s1->graphicsIter->RenderPassX(), s1->graphicsIter->RenderPassY(), 0));
+			renderer.submit(s1->graphicsIter->sprite);
 		}
-		
+
 		
 		renderer.flush();
 		window->update();
 
-		Sleep(16);
+		t2.update();
 	}
 
 	//testing purposes get rid of laters
@@ -128,18 +141,56 @@ int main()
 	s1 = new Scene();
 	s1->RegisterAsWorld();
 	s1->setLinearDamping(0);
+
+	s1->LoadFromFile("Scene1.txt");
+	
+	
+	
+	//GameObject g(s1->NumOfObjects++);
+	//
+	//s1->AddObject(g);
+	//g.SetPosX(5);
+	//g.SetPosY(5);
+	//g.RegisterAsRigidBody(s1->getWorldID()); 
+	//g.color = prototype::maths::vec4(1,1,1,1);
+	//g.size = prototype::maths::vec2(4,4);
+	
+	
+	s1->fullBeginIter = s1->fullListOfObjects.begin();
+
+
+	for (s1->fullBeginIter = s1->fullListOfObjects.begin(); s1->fullBeginIter != s1->fullListOfObjects.end(); s1->fullBeginIter++) {
+		if (s1->fullBeginIter->GetDynamic() == 1) {
+			s1->fullBeginIter->RegisterAsRigidBody(s1->getWorldID());
+		}
+	}
+
+	//cout << (*(s1->fullBeginIter))->GetDynamic();
+	//
+	//(*(s1->fullBeginIter))->RegisterAsRigidBody(s1->getWorldID());
+
+	//for (s1->fullBeginIter = s1->fullListOfObjects.begin(); s1->fullBeginIter != s1->fullListOfObjects.end(); s1->fullBeginIter++) {
+	//	if ((*(s1->fullBeginIter))->GetDynamic() == 1) {
+	//		(*(s1->fullBeginIter))->RegisterAsRigidBody(s1->getWorldID());
+	//	}
+	////(*(s1->fullBeginIter))->addForce(Vector2(10,10));
+	////(*(s1->fullBeginIter))->addRelativeForce(Vector2(10, 10));
+	////cout << (*(s1->fullBeginIter))->getLinearVelocity().getX();
+	//}
+
+
 	//s1->setGravity(Vector2(0, -10));
 
-	GameObject g(s1->NumOfObjects++);
-	
-	s1->AddObject(g);
-	g.SetPosX(5);
-	g.SetPosY(5);
-	g.RegisterAsRigidBody(s1->getWorldID()); 
-	g.color = prototype::maths::vec4(1,1,1,1);
-	g.size = prototype::maths::vec2(4,4);
+	//GameObject g(s1->NumOfObjects++);
+	//
+	//s1->AddObject(g);
+	//g.SetPosX(5);
+	//g.SetPosY(5);
+	//g.RegisterAsRigidBody(s1->getWorldID()); 
+	//g.color = prototype::maths::vec4(1,1,1,1);
+	//g.size = prototype::maths::vec2(4,4);
 
-	GameObject g2(s1->NumOfObjects++);
+	/*GameObject g2(s1->NumOfObjects++);
 	s1->AddObject(g2);
 	g2.SetPosX(5);
 	g2.SetPosY(2);
@@ -148,7 +199,7 @@ int main()
 	g2.size = prototype::maths::vec2(2, 4);
 
 	g.setLinearVelocity(Vector2(0, -1));
-
+	*/
 	// prototype::maths::vec2(4, 4), prototype::maths::vec4(1, 1, 1, 1)
 
 

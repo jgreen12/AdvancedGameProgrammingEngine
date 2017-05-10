@@ -57,13 +57,13 @@ float GameObject::RenderPassY()
 
 
 
-__int8 GameObject::GetActive() {
+int GameObject::GetActive() {
 	return Active;
 }
-__int8 GameObject::GetDynamic() {
+int GameObject::GetDynamic() {
 	return Dynamic;
 }
-__int8 GameObject::GetVisible() {
+int GameObject::GetVisible() {
 	return Visible;
 }
 void GameObject::SetActive(__int8 newAct) {
@@ -866,11 +866,13 @@ GameObject::GameObject(int id, string strN, double XPos, double YPos) {
 	ID = id;
 }
 
-GameObject::GameObject(int id, string strN, double xPos, double yPos, __int8 physics, __int8 graphics, prototype::maths::vec4 ocolor, prototype::maths::vec2 osize) {
+GameObject::GameObject(int id, string strN, double xPos, double yPos, int physics, int graphics, prototype::maths::vec4 ocolor, prototype::maths::vec2 osize) {
 	ID = id;
 	Name = strN;
-	SetPosX(xPos);
-	SetPosY(yPos);
+	//SetPosX(xPos);
+	//SetPosY(yPos);
+	Position.X = xPos;
+	Position.Y = yPos;
 	Dynamic = physics;
 	Visible = graphics;
 	color = ocolor;

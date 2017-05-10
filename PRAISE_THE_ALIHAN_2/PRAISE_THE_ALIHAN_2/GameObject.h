@@ -37,9 +37,9 @@ protected:
 	};
 
 	Position Position;
-	__int8 Active; //is the object active in a scene? This could be used to turn something off when off screen, but turn it on when in range. 1 for yes 0 for no
-	__int8 Dynamic; //uses dynamic physics? 1 for yes 0 for no, could introduce another state like 2 for something that doesn't use physics at all, but is placed in the scene.
-	__int8 Visible; //is rendered? 1 for yes 0 for no, could introduce another state for hack magic <- joke
+	int Active; //is the object active in a scene? This could be used to turn something off when off screen, but turn it on when in range. 1 for yes 0 for no
+	int Dynamic; //uses dynamic physics? 1 for yes 0 for no, could introduce another state like 2 for something that doesn't use physics at all, but is placed in the scene.
+	int Visible; //is rendered? 1 for yes 0 for no, could introduce another state for hack magic <- joke
 
 	string Name; //name of the object
 	string Type; //a tag of the object, could be used to find all objects of a certain type, and apply an effect dynamically or something
@@ -59,7 +59,7 @@ public:
 	GameObject(int id, string strN, double XPos, double YPos);//name and start coords
 													  //we can add more constructors as needed. 
 
-	GameObject(int id, string strN, double xPos, double yPos, __int8 physics, __int8 graphics, prototype::maths::vec4 ocolor, prototype::maths::vec2 osize);
+	GameObject(int id, string strN, double xPos, double yPos, int physics, int graphics, prototype::maths::vec4 ocolor, prototype::maths::vec2 osize);
 
 
 	//~GameObject();
@@ -74,9 +74,9 @@ public:
 	void SetName(string newName);
 	void SetType(string newType);
 
-	__int8 GetActive();
-	__int8 GetDynamic();
-	__int8 GetVisible();
+	int GetActive();
+	int GetDynamic();
+	int GetVisible();
 	void SetActive(__int8 newAct);
 	void SetDynamic(__int8 newDyna);
 	void SetVisible(__int8 newVisi);

@@ -26,35 +26,37 @@ void Scene::LoadFromFile(string FileName) {
 	string line;
 	while (getline(objLoader, line)) {
 		stringstream linestream(line);
-		string cell[8];
+		string cell[7];
 		int counter = 0;
 		while (getline(linestream, cell[counter], ',')) {
 			counter++;
 		}
 
-		istringstream sizeStr(cell[6]);
+		istringstream sizeStr(cell[5]);
 		string sizeArr[2];
 		int sizeCount = 0;
 		while (getline(sizeStr, sizeArr[sizeCount], ' ')) {
 			sizeCount++;
 		}
-		istringstream colorStr(cell[7]);
+		istringstream colorStr(cell[6]);
 		string colorArr[4];
 		int colorCount = 0;
-		while (getline(colorStr, colorArr[sizeCount], ' ')) {
+		while (getline(colorStr, colorArr[colorCount], ' ')) {
 			colorCount++;
 		}
-
-		int id = atoi(cell[0].c_str());
-		string name = cell[1];
-		double xPos = atof(cell[2].c_str());
-		double yPos = atof(cell[3].c_str());
-		__int8 dynamic = atoi(cell[4].c_str());
-		__int8 graphics = atoi(cell[5].c_str());
-		//prototype::maths::vec2();
-		//GameObject g(id, name, xPos, yPos, dynamic, graphics, prototype::maths::vec2 (), );
+		NumOfObjects++;
+		int id = NumOfObjects;
+		string name = cell[0];
+		double xPos = atof(cell[1].c_str());
+		double yPos = atof(cell[2].c_str());
+		int dynamic = atoi(cell[3].c_str());
+		int graphics = atoi(cell[4].c_str());
+		prototype::maths::vec2 size(atof(sizeArr[0].c_str()), atof(sizeArr[1].c_str()));
+		prototype::maths::vec4 color( atof(colorArr[0].c_str()), atof(colorArr[1].c_str()), atof(colorArr[2].c_str()), atof(colorArr[3].c_str()));
+		GameObject g(id, name, xPos, yPos, dynamic, graphics, color, size);
+		AddObjectVal(g);
 	}
-
+	objLoader.close();
 }
 
 
@@ -247,10 +249,17 @@ void Scene::setContactSurfaceLayer(double depth)
 }
 
 
-void Scene::RemoveObject(GameObject &g) {
-	fullListOfObjects.remove(&g);
+//void Scene::RemoveObject(GameObject &g) {
+//	fullListOfObjects.remove(&g);
+//	if (g.GetVisible() == 1) {
+//		graphicsList.remove(&g);
+//	}
+//}
+
+void Scene::RemoveObject(GameObject g) {
+	fullListOfObjects.remove(g);
 	if (g.GetVisible() == 1) {
-		graphicsList.remove(&g);
+		graphicsList.remove(g);
 	}
 }
 
@@ -258,11 +267,27 @@ void Scene::UpdateObjects() {
 	//should iterate through the list calling any update functions we define
 }
 
-void Scene::AddObject(GameObject &g) {
+//void Scene::AddObject(GameObject &g) {
+//	//simple method to add the objects to the list
+//	fullListOfObjects.push_front(&g);
+//	if (g.GetVisible() == 1) {
+//		graphicsList.push_front(&g);
+//	}
+//}
+
+void Scene::AddObject(GameObject g) {
 	//simple method to add the objects to the list
-	fullListOfObjects.push_front(&g);
+	fullListOfObjects.push_front(g);
 	if (g.GetVisible() == 1) {
-		graphicsList.push_front(&g);
+		graphicsList.push_front(g);
+	}
+}
+
+void Scene::AddObjectVal(GameObject g) {
+	//simple method to add the objects to the list
+	fullListOfObjects.push_front(g);
+	if (g.GetVisible() == 1) {
+		graphicsList.push_front(g);
 	}
 }
 
