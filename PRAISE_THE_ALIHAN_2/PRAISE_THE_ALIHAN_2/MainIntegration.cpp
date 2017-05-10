@@ -17,7 +17,7 @@
 
 
 #include "Timer.h"
-
+#include "Input.h"
 #include <Windows.h>
 
 #pragma warning(disable : 4996)
@@ -29,7 +29,9 @@ GameObject* PlayerObject;
 
 bool physics_running = true;
 Scene *s1;
+
 prototype::graphics::Window* window;
+prototype::graphics::Input inp(window);
 //prototype::graphics::Shader* shader;
 
 //huehuehuehuehuehue
