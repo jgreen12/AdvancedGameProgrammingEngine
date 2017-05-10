@@ -25,7 +25,34 @@ void Scene::LoadFromFile(string FileName) {
 	ifstream objLoader(FileName);
 	string line;
 	while (getline(objLoader, line)) {
+		stringstream linestream(line);
+		string cell[8];
+		int counter = 0;
+		while (getline(linestream, cell[counter], ',')) {
+			counter++;
+		}
 
+		istringstream sizeStr(cell[6]);
+		string sizeArr[2];
+		int sizeCount = 0;
+		while (getline(sizeStr, sizeArr[sizeCount], ' ')) {
+			sizeCount++;
+		}
+		istringstream colorStr(cell[7]);
+		string colorArr[4];
+		int colorCount = 0;
+		while (getline(colorStr, colorArr[sizeCount], ' ')) {
+			colorCount++;
+		}
+
+		int id = atoi(cell[0].c_str());
+		string name = cell[1];
+		double xPos = atof(cell[2].c_str());
+		double yPos = atof(cell[3].c_str());
+		__int8 dynamic = atoi(cell[4].c_str());
+		__int8 graphics = atoi(cell[5].c_str());
+		//prototype::maths::vec2();
+		//GameObject g(id, name, xPos, yPos, dynamic, graphics, prototype::maths::vec2 (), );
 	}
 
 }
