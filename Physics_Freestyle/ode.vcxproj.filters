@@ -513,6 +513,9 @@
     <ClInclude Include="Matrix3.h">
       <Filter>Header</Filter>
     </ClInclude>
+    <ClInclude Include="Space.h">
+      <Filter>Header</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\ode-0.14\ode\src\joints\amotor.cpp">
@@ -879,6 +882,9 @@
       <Filter>Source</Filter>
     </ClCompile>
     <ClCompile Include="Matrix3.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Space.cpp">
       <Filter>Source</Filter>
     </ClCompile>
   </ItemGroup>

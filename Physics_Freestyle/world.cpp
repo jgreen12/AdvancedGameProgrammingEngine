@@ -27,12 +27,23 @@ World::World(void)
 	setAutoDisableAngularThreshold(0.01);
 	setAutoDisableSteps(10);
 	setAutoDisableTime(0);
+
+	this->space = new Space();
+	
+	
 }
 
 World::~World(void)
 {
 	//Destroys world object
 	dWorldDestroy(this->worldID);
+
+	delete this->space;
+}
+
+dSpaceID World::getSpaceID(void)
+{
+	return this->space->getSpaceID();
 }
 
 dWorldID World::getWorldID(void)
@@ -173,4 +184,9 @@ void World::setContactSurfaceLayer(dReal depth)
 {
 	//Sets the depth of the surface layer around all objects (default is 0)
 	dWorldSetContactSurfaceLayer(this->worldID, depth);
+}
+
+void World::physicsStateToFile(FILE * file)
+{
+	dWorldExportDIF(this->worldID, file, "test");
 }

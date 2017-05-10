@@ -547,6 +547,7 @@
     <ClInclude Include="body.h" />
     <ClInclude Include="Matrix3.h" />
     <ClInclude Include="Quaternion.h" />
+    <ClInclude Include="Space.h" />
     <ClInclude Include="vector.h" />
     <ClInclude Include="world.h" />
   </ItemGroup>
@@ -788,6 +789,7 @@
     <ClCompile Include="body.cpp" />
     <ClCompile Include="Matrix3.cpp" />
     <ClCompile Include="Quaternion.cpp" />
+    <ClCompile Include="Space.cpp" />
     <ClCompile Include="vector.cpp" />
     <ClCompile Include="world.cpp" />
   </ItemGroup>
