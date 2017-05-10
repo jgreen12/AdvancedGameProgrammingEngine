@@ -40,12 +40,31 @@ prototype::graphics::Input inp(window);
 DWORD WINAPI Physics_Update(LPVOID vParam) {
 	Timer t1 (120);
 
+	
+	s1->fullBeginIter = s1->fullListOfObjects.begin();
+	s1->fullBeginIter->setMass(1000);
+	
+	s1->fullBeginIter = s1->fullListOfObjects.begin()++;
+	s1->fullBeginIter->setKinematic();
+
+	s1->setGravity(Vector2(0, -1));
+
 	while ( physics_running ) {
 		
-		s1->safeStepWorld( (1.0/120.0) );
+		//s1->safeStepWorld( (1.0/120.0) );
+		s1->quickStepWorld((1.0 / 120.0));
 		
+		//for (s1->fullBeginIter = s1->fullListOfObjects.begin(); s1->fullBeginIter != s1->fullListOfObjects.end(); s1->fullBeginIter++) {
+		//	if (s1->fullBeginIter->GetDynamic() == 1) {
+		//		
+		//		//s1->fullBeginIter->setAffectedByGravity(true);
+		//		//cout << s1->fullBeginIter->RenderPassX() << " " << s1->fullBeginIter->RenderPassY() << endl;
+		//		//s1->fullBeginIter->addForce(Vector2(10, 10));
+		//	}
+		//}
 
 		t1.update();
+		//Sleep(8);
 	}
 	return 0;
 }
@@ -74,9 +93,14 @@ DWORD WINAPI Graphics_Udate(LPVOID vParam) {
 	//for (s1->graphicsIter = s1->graphicsList.begin(); s1->graphicsIter != s1->graphicsList.end(); s1->graphicsIter++) {	//position,	SIZE oh wait no, he meant SCALE, COLOR
 	//	(*(s1->graphicsIter))->initializeRenderable(shader);
 	//}
-	for (s1->graphicsIter = s1->graphicsList.begin(); s1->graphicsIter != s1->graphicsList.end(); s1->graphicsIter++) {	//position,	SIZE oh wait no, he meant SCALE, COLOR
-		s1->graphicsIter->initializeRenderable(shader);
+	//for (s1->graphicsIter = s1->graphicsList.begin(); s1->graphicsIter != s1->graphicsList.end(); s1->graphicsIter++) {	//position,	SIZE oh wait no, he meant SCALE, COLOR
+	//	s1->graphicsIter->initializeRenderable(shader);
+	//}
+
+	for (s1->FullListGraphics = s1->fullListOfObjects.begin(); s1->FullListGraphics != s1->fullListOfObjects.end(); s1->FullListGraphics++) {	//position,	SIZE oh wait no, he meant SCALE, COLOR
+		s1->FullListGraphics->initializeRenderable(shader);
 	}
+
 
 	Simple2DRenderer renderer;
 
@@ -97,9 +121,18 @@ DWORD WINAPI Graphics_Udate(LPVOID vParam) {
 		//	//cout << "Get Pass: " << s1->graphicsIter->GetPosX() << " " << s1->graphicsIter->GetPosY() << endl;
 		//	renderer.submit((*(s1->graphicsIter))->sprite);
 		//}
-		for (s1->graphicsIter = s1->graphicsList.begin(); s1->graphicsIter != s1->graphicsList.end(); s1->graphicsIter++) {
-			s1->graphicsIter->sprite->update(prototype::maths::vec3(s1->graphicsIter->RenderPassX(), s1->graphicsIter->RenderPassY(), 0));
-			renderer.submit(s1->graphicsIter->sprite);
+		//for (s1->graphicsIter = s1->graphicsList.begin(); s1->graphicsIter != s1->graphicsList.end(); s1->graphicsIter++) {
+		//	s1->graphicsIter->sprite->update(prototype::maths::vec3(s1->graphicsIter->RenderPassX(), s1->graphicsIter->RenderPassY(), 0));
+		//	//cout << s1->graphicsIter->sprite->getPosition() << endl;
+		//	renderer.submit(s1->graphicsIter->sprite);
+		//}
+		for (s1->FullListGraphics = s1->fullListOfObjects.begin(); s1->FullListGraphics != s1->fullListOfObjects.end(); s1->FullListGraphics++) {
+			if (s1->FullListGraphics->GetVisible() == 1) {
+				s1->FullListGraphics->sprite->update(prototype::maths::vec3(s1->FullListGraphics->RenderPassX(), s1->FullListGraphics->RenderPassY(), 0));
+				//cout << s1->graphicsIter->sprite->getPosition() << endl;
+				renderer.submit(s1->FullListGraphics->sprite);
+			}
+			
 		}
 
 		
@@ -148,7 +181,7 @@ int main()
 	s1 = new Scene();
 	s1->RegisterAsWorld();
 	s1->setLinearDamping(0);
-	s1->setGravity(Vector2(0, -10));
+	//s1->setGravity(Vector2(0, -10));
 
 	s1->setBasicCallback(&nearCallback);
 
@@ -167,15 +200,17 @@ int main()
 	
 	
 	s1->fullBeginIter = s1->fullListOfObjects.begin();
-
+	//s1->fullBeginIter->addForce(Vector2(5,0));
 
 	for (s1->fullBeginIter = s1->fullListOfObjects.begin(); s1->fullBeginIter != s1->fullListOfObjects.end(); s1->fullBeginIter++) {
 		if (s1->fullBeginIter->GetDynamic() == 1) {
 			s1->fullBeginIter->RegisterAsRigidBody(s1->getWorldID(), s1->getSpaceID());
-			s1->fullBeginIter->setAffectedByGravity(true);
+			//s1->fullBeginIter->setAffectedByGravity(true);
+			cout << s1->fullBeginIter->isAffectedByGravity() << endl;
+			//s1->fullBeginIter->addForce(Vector2(10, 10));
 		}
 	}
-
+	//s1->setGravity(Vector2(0, -.1));
 	//cout << (*(s1->fullBeginIter))->GetDynamic();
 	//
 	//(*(s1->fullBeginIter))->RegisterAsRigidBody(s1->getWorldID());

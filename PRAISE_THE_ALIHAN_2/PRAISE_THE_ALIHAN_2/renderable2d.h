@@ -58,7 +58,7 @@ namespace prototype {
 
 			inline void update(maths::vec3 translation) {
 				m_Position = translation;
-//				cout << "Translation: " << m_Position << endl;
+				std::cout << "Translation: " << m_Position << std::endl;
 			}
 
 			inline Renderable2D operator=(const Renderable2D& other) {

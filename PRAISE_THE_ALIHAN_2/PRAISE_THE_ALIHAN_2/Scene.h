@@ -47,9 +47,10 @@ public:
 	list<GameObject*>::iterator graphicsIter;*/
 
 	list<GameObject> fullListOfObjects;
-	list<GameObject> graphicsList;
 	list<GameObject>::iterator fullBeginIter;
-	list<GameObject>::iterator graphicsIter;
+	list<GameObject*> graphicsList;
+	list<GameObject*>::iterator graphicsIter;
+	list<GameObject>::iterator FullListGraphics;
 
 	Scene();
 	void RemoveAllObjects();

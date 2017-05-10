@@ -283,7 +283,7 @@ void Scene::setContactSurfaceLayer(double depth)
 void Scene::RemoveObject(GameObject g) {
 	fullListOfObjects.remove(g);
 	if (g.GetVisible() == 1) {
-		graphicsList.remove(g);
+//		graphicsList.remove(g);
 	}
 }
 
@@ -303,15 +303,17 @@ void Scene::AddObject(GameObject g) {
 	//simple method to add the objects to the list
 	fullListOfObjects.push_front(g);
 	if (g.GetVisible() == 1) {
-		graphicsList.push_front(g);
+		//graphicsList->push_front(g);
 	}
 }
 
 void Scene::AddObjectVal(GameObject g) {
 	//simple method to add the objects to the list
 	fullListOfObjects.push_front(g);
+	fullBeginIter = fullListOfObjects.end()--;
+
 	if (g.GetVisible() == 1) {
-		graphicsList.push_front(g);
+	//	(*graphicsList)->push_front(  fullBeginIter  );
 	}
 }
 
