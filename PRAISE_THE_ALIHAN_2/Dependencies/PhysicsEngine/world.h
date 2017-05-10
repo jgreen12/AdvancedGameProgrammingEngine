@@ -6,18 +6,25 @@
 
 #include <ode/ode.h>
 #include "vector.h"
+#include "Space.h"
 
 class World
 {
 	private:
 		dWorldID worldID;
+		Space* space;
+		dJointGroupID groupID;
+		dNearCallback* x;
+
+		
 
 
 	public:
 			World(void);
 			~World(void);
-
+			
 			dWorldID getWorldID(void);
+			dSpaceID getSpaceID(void);
 
 		void set3DGravity(dReal x, dReal y, dReal z);
 		void set3DGravity(Vector3 vector);
@@ -50,6 +57,10 @@ class World
 
 		void setContactSurfaceLayer(dReal depth);
 
+		void physicsStateToFile(FILE* file);
+
+		void setBasicCallback(dNearCallback* function);
+		void basicCollisionCallback(void*, dGeomID, dGeomID);
 		
 };
 

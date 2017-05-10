@@ -27,12 +27,25 @@ World::World(void)
 	setAutoDisableAngularThreshold(0.01);
 	setAutoDisableSteps(10);
 	setAutoDisableTime(0);
+
+	this->space = new Space();
+
+	this->groupID = dJointGroupCreate(0);
+	
+	
 }
 
 World::~World(void)
 {
 	//Destroys world object
 	dWorldDestroy(this->worldID);
+
+	delete this->space;
+}
+
+dSpaceID World::getSpaceID(void)
+{
+	return this->space->getSpaceID();
 }
 
 dWorldID World::getWorldID(void)
@@ -108,16 +121,76 @@ Vector3 World::convertImpulseToForce(dReal stepSize, Vector3 impulse)
 
 void World::safeStepWorld(dReal stepSize)
 {
+	
+	dSpaceCollide(this->space->getSpaceID(), 0, this->x);
+
 	//dWorldStep steps the world, but uses a "big matrix" method which causes less errors, but uses
 	//a lot of memory.
 	dWorldStep(this->worldID, stepSize);
+
+	dJointGroupEmpty(this->groupID);
 }
+
+void World::setBasicCallback(dNearCallback* callback)
+{
+	this->x = callback;
+}
+
+void World::basicCollisionCallback(void*, dGeomID o1, dGeomID o2)
+{
+	dBodyID b1 = dGeomGetBody(o1);
+	dBodyID b2 = dGeomGetBody(o2);
+
+	dContact contact[4];
+
+	int n = dCollide(o1, o2, 4, &contact[0].geom, sizeof(dContact));
+
+	if (n > 0)
+	{
+		for (int i = 0; i < n; i++)
+		{
+			contact[i].surface.mode = dContactSlip1 | dContactSlip2 | dContactSoftERP | dContactSoftCFM | dContactApprox1;
+			if (dGeomGetClass(o1) == dSphereClass || dGeomGetClass(o2) == dSphereClass)
+				contact[i].surface.mu = 20;
+			else
+				contact[i].surface.mu = 0.5;
+			contact[i].surface.slip1 = 0.0;
+			contact[i].surface.slip2 = 0.0;
+			contact[i].surface.soft_erp = 0.8;
+			contact[i].surface.soft_cfm = 0.01;
+			dJointID c = dJointCreateContact(this->worldID, this->groupID, contact + i);
+			dJointAttach(c, dGeomGetBody(o1), dGeomGetBody(o2));
+			
+		}
+	}
+}
+
+//void nearCallback(void*, dGeomID o1, dGeomID o2)
+//{
+//	dBodyID b1 = dGeomGetBody(o1);
+//	dBodyID b2 = dGeomGetBody(o2);
+//
+//
+//	dContact contact[8];
+//
+//	int numc = dCollide(o1, o2, 8, &contact[0].geom, sizeof(dContact));
+//
+//	for (int i = 0; i < numc; i++)
+//	{
+//		contact[i].surface.mode = dContactApprox1;
+//		contact[i].surface.mu = 5;
+//	}
+//}
 
 void World::quickStepWorld(dReal stepSize)
 {
+	dSpaceCollide(this->space->getSpaceID(), 0, this->x);
+
 	//dWorldQuickStep steps the world, but uses a faster method which works better on lower end systems,
 	//but also can cause more errors. Some of these errors can be mitigated with ERP and CFM
 	dWorldQuickStep(this->worldID, stepSize);
+
+	dJointGroupEmpty(this->groupID);
 }
 
 void World::setQuickStepNumberIterations(int number)
@@ -173,4 +246,9 @@ void World::setContactSurfaceLayer(dReal depth)
 {
 	//Sets the depth of the surface layer around all objects (default is 0)
 	dWorldSetContactSurfaceLayer(this->worldID, depth);
+}
+
+void World::physicsStateToFile(FILE * file)
+{
+	dWorldExportDIF(this->worldID, file, "test");
 }
