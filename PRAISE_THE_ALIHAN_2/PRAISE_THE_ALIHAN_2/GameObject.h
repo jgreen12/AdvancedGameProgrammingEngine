@@ -58,6 +58,10 @@ public:
 	GameObject(int id, string strN, string strT, double XPos, double YPos); //name tag and start coords
 	GameObject(int id, string strN, double XPos, double YPos);//name and start coords
 													  //we can add more constructors as needed. 
+
+	GameObject(int id, string strN, double xPos, double yPos, __int8 physics, __int8 graphics, prototype::maths::vec4 ocolor, prototype::maths::vec2 osize);
+
+
 	//~GameObject();
 
 	double GetPosX();
@@ -193,6 +197,13 @@ public:
 
 	prototype::graphics::Renderable2D* sprite = NULL;
 	void initializeRenderable(prototype::maths::vec3 position, prototype::maths::vec2 size, prototype::maths::vec4 color, prototype::graphics::Shader& shader);
+	void initializeRenderable(prototype::graphics::Shader& shader);
+
+	prototype::maths::vec2 size;
+	prototype::maths::vec4 color;
+
+
+
 };
 
 #endif

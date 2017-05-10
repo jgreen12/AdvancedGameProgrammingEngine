@@ -59,7 +59,7 @@ DWORD WINAPI Graphics_Udate(LPVOID vParam) {
 	shader.setUniformMat4("ml_matrix", mat4::translation(vec3(4, 3, 0)));
 	
 	for (s1->graphicsIter = s1->graphicsList.begin(); s1->graphicsIter != s1->graphicsList.end(); s1->graphicsIter++) {	//position,	SIZE oh wait no, he meant SCALE, COLOR
-		(*(s1->graphicsIter))->initializeRenderable(prototype::maths::vec3((*(s1->graphicsIter))->RenderPassX(), (*(s1->graphicsIter))->RenderPassY(), 0), prototype::maths::vec2(4, 4), prototype::maths::vec4(1, 0, 1, 1), shader);
+		(*(s1->graphicsIter))->initializeRenderable(shader);
 	}
 
 	Simple2DRenderer renderer;
@@ -96,7 +96,7 @@ DWORD WINAPI Graphics_Udate(LPVOID vParam) {
 }
 
 
-
+// prototype::maths::vec2(4, 4), prototype::maths::vec4(1, 1, 1, 1)
 
 int main() 
 {
@@ -136,16 +136,22 @@ int main()
 	g.SetPosX(5);
 	g.SetPosY(5);
 	g.RegisterAsRigidBody(s1->getWorldID()); 
-
+	g.color = prototype::maths::vec4(1,1,1,1);
+	g.size = prototype::maths::vec2(4,4);
 
 	GameObject g2(s1->NumOfObjects++);
 	s1->AddObject(g2);
 	g2.SetPosX(5);
 	g2.SetPosY(2);
 	g2.RegisterAsRigidBody(s1->getWorldID());
-	
+	g2.color = prototype::maths::vec4(5, 0, 10, 1);
+	g2.size = prototype::maths::vec2(2, 4);
 
 	g.setLinearVelocity(Vector2(0, -1));
+
+	// prototype::maths::vec2(4, 4), prototype::maths::vec4(1, 1, 1, 1)
+
+
 	//g.setLinearVelocity(Vector2(1, 1));
 	//g.addForce(Vector2(5, 5));
 	

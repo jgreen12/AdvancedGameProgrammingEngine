@@ -14,6 +14,14 @@
 #include "world.h"
 
 
+
+
+#include <sstream>
+#include <fstream>
+
+
+
+
 #include <ode/ode.h>
 
 using namespace std;
@@ -30,6 +38,8 @@ protected:
 
 
 public:
+
+	void LoadFromFile(string FilePath);
 
 	list<GameObject*> fullListOfObjects;
 	list<GameObject*> graphicsList;
@@ -80,6 +90,9 @@ public:
 	void setContactMaxCorrectingVelocity(double velocity);
 
 	void setContactSurfaceLayer(double depth);
+
+
+
 };
 
 #endif

@@ -21,6 +21,15 @@
 
 using namespace std;
 
+void Scene::LoadFromFile(string FileName) {
+	ifstream objLoader(FileName);
+	string line;
+	while (getline(objLoader, line)) {
+
+	}
+
+}
+
 
 
 void Scene::RegisterAsWorld(void)

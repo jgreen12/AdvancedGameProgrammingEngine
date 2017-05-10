@@ -31,6 +31,10 @@ using namespace std;
 void GameObject::initializeRenderable(prototype::maths::vec3 position, prototype::maths::vec2 size, prototype::maths::vec4 color, prototype::graphics::Shader& shader) {
 	sprite = new prototype::graphics::Renderable2D(position, size, color, shader);
 }
+
+void GameObject::initializeRenderable(prototype::graphics::Shader& shader) {
+	sprite = new prototype::graphics::Renderable2D(prototype::maths::vec3 (GetPosX(), GetPosY(), 0), size, color, shader);
+}
 	
 
 bool GameObject::operator== (const GameObject &g1) const {
@@ -862,6 +866,18 @@ GameObject::GameObject(int id, string strN, double XPos, double YPos) {
 	ID = id;
 }
 
+GameObject::GameObject(int id, string strN, double xPos, double yPos, __int8 physics, __int8 graphics, prototype::maths::vec4 ocolor, prototype::maths::vec2 osize) {
+	ID = id;
+	Name = strN;
+	SetPosX(xPos);
+	SetPosY(yPos);
+	Dynamic = physics;
+	Visible = graphics;
+	color = ocolor;
+	size = osize;
+	
+
+}
 
 
 #endif
