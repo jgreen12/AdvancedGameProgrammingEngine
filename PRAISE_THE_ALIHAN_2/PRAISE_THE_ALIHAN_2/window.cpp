@@ -2,6 +2,16 @@
 #include <iostream>
 
 
+/********************************************
+Author: Charles Miller
+window.cpp
+CPP file for Header file window.h to set up a
+window with glfw, from width to height, name,
+and mouse/key coordinate interaction response
+recorder within the window. Self-explanatory functions.
+********************************************/
+
+
 namespace prototype {
 	namespace graphics {
 

@@ -4,6 +4,13 @@
 #define QUATERNION_H
 
 #include "vector.h"
+/********************************************
+Author: Noah Pena
+Quaternion.h
+Header file for creating a quaternion variable,
+either with dReal, dReal and vector3, four
+dReal variables, a single vector3, or dReal x,y,z.
+********************************************/
 
 class Quaternion : public Vector3
 {

@@ -1,6 +1,15 @@
 #pragma once
 #include "mat4.h"
 //#include "maths.h"
+/********************************************
+Author: Charles Miller
+mat4.cpp
+CPP file for Header file mat4.h meant to create a struct
+named mat4 that holds 16 (four columns, four rows)
+elements plus linear algebra operations with the struct,
+including orthographic, perspective, translation,
+rotation, and scale.
+********************************************/
 
 namespace prototype {
 	namespace maths {

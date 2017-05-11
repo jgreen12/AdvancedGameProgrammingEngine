@@ -1,5 +1,13 @@
 #pragma once
 
+/********************************************
+Author: Noah Pena
+world.h
+Header file for setting gravity, getting gravity,
+disabling/setting bodies, disabling/setting
+linear/angular thresholds, disable steps and time,
+set damping, angular speed, and velocity. 
+********************************************/
 
 #ifndef WORLD_H
 #define WORLD_H

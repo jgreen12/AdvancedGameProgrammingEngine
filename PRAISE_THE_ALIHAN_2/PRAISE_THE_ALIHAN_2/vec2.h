@@ -1,6 +1,12 @@
 #pragma once
 
 #include <iostream>
+/********************************************
+Author: Charles Miller
+vec2.h
+Header file meant to create a struct named vec2
+that holds 2 elements plus operations with the struct.
+********************************************/
 
 namespace prototype {
 	namespace maths {

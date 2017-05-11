@@ -1,4 +1,10 @@
 #include "simple2drenderer.h"
+/********************************************
+Author: Charles Miller
+simple2drenderer.cpp
+CPP file for header file simple2drenderer.h meant to step
+through the m_RenderQueue to render multiple objects.
+********************************************/
 
 namespace prototype {
 	namespace graphics {

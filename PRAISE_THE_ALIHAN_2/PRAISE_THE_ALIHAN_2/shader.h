@@ -5,6 +5,15 @@
 #include <GL\glew.h>
 #include "maths.h"
 
+/********************************************
+Author: Charles Miller
+shader.h
+Header file to create shaders, set uniform variable
+values from either 1 variable or up to 4. Also to enable
+and disable the shaders.
+********************************************/
+
+
 namespace prototype {
 	namespace graphics {
 		class Shader {

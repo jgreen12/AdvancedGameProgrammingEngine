@@ -1,5 +1,13 @@
 
 #include "Matrix3.h"
+/********************************************
+Author: Noah Pena
+Matrix3.cpp 
+CPP file for Header file Matrix.h for setting up a matrix, with
+positions in rows and column, either with
+direct input, cross product, vector multiplication,
+with vectors, or with using other matrices.
+********************************************/
 
 
 Matrix3::Matrix3(void)

@@ -1,4 +1,11 @@
 #include "vec2.h"
+/********************************************
+Author: Charles Miller
+vec2.cpp
+CPP file for Header file vec2.h meant to create a struct
+named vec2 that holds 2 elements plus operations with
+the struct.
+********************************************/
 
 namespace prototype {
 	namespace maths {

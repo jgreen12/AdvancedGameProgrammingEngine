@@ -3,6 +3,20 @@
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 
+
+
+/********************************************
+Author: Charles Miller
+window.h
+Header file to set up a window with glfw,
+from width to height, name, and mouse/key coordinate
+interaction response recorder within the window.
+Self-explanatory functions.
+********************************************/
+
+
+
+
 namespace prototype {
 	namespace graphics {
 

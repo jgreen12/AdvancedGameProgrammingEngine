@@ -1,5 +1,12 @@
 
 #include "Quaternion.h"
+/********************************************
+Author: Noah Pena
+Quaternion.cpp
+CPP for Header file Quaternion.h for creating a quaternion variable,
+either with dReal, dReal and vector3, four
+dReal variables, a single vector3, or dReal x,y,z.
+********************************************/
 
 Quaternion::Quaternion(void) : Vector3()
 {

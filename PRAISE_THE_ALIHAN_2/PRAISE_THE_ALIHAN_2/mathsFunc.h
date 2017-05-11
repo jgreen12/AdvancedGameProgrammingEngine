@@ -2,6 +2,13 @@
 #define _USE_MATH_DEFINES
 #include <math.h>
 
+/********************************************
+Author: Charles Miller
+mathsFunc.h
+Header file to calculate Radians from Degrees.
+********************************************/
+
+
 namespace prototype {
 	namespace maths {
 

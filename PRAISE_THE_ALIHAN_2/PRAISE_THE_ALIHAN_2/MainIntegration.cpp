@@ -1,3 +1,6 @@
+//Written by Joshua Green
+//Example implementation of all game logic, behavior and framework
+
 #include <iostream>
 #include "window.h"
 #include "maths.h"

@@ -6,6 +6,9 @@
 
 
 //created by: Joshua Green
+//this file contains implementations for all scene operations including loading from a file, and other scene operations
+
+
 //#include <list>
 //#include <string>
 //#include "GameObject.h"
@@ -21,6 +24,8 @@
 
 using namespace std;
 
+
+//function to parse data from the Scene1.txt file into objects line by line
 void Scene::LoadFromFile(string FileName) {
 	ifstream objLoader(FileName);
 	string line;

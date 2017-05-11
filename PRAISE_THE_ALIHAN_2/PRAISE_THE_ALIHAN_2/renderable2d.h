@@ -4,6 +4,13 @@
 #include "vertexarray.h"
 #include "maths.h"
 #include "shader.h"
+/********************************************
+Author: Charles Miller
+renderable2d.h
+Header file meant to create an object with set colors
+and dimensions by programmer/user and then put them
+into the buffer for the shaders to then draw.
+********************************************/
 
 
 namespace prototype {

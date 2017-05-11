@@ -1,6 +1,12 @@
 #pragma once
 
 #include <iostream>
+/********************************************
+Author: Charles Miller
+vec4.h
+Header file meant to create a struct named vec4
+that holds 4 elements plus operations with the struct.
+********************************************/
 
 namespace prototype {
 	namespace maths {

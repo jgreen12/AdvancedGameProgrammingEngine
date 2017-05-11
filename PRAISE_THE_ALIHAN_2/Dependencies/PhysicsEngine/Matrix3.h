@@ -5,6 +5,14 @@
 
 #include <ode/ode.h>
 #include "vector.h"
+/********************************************
+Author: Noah Pena
+Matrix3.h 
+Header file for setting up a matrix, with
+positions in rows and column, either with
+direct input, cross product, vector multiplication,
+with vectors, or with using other matrices.
+********************************************/
 
 class Matrix3
 {

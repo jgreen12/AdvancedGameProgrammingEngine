@@ -5,6 +5,7 @@
 
 //Created by: Joshua Green
 //Collaboration with: 
+//this header file contains declarations for GameObject declarations
 #include <string>
 #include <vector>
 
@@ -47,7 +48,7 @@ protected:
 
 public:
 
-	int ID;
+	int ID;//id of the object assigned by the scene
 	Body* rigidBody;
 
 	bool operator==(const GameObject& poop) const;

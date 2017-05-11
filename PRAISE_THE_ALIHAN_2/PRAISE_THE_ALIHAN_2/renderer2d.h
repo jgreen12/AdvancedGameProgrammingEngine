@@ -2,6 +2,12 @@
 #include "renderable2d.h"
 #include <GL\glew.h>
 #include "maths.h"
+/********************************************
+Author: Charles Miller
+renderer.h
+Header file meant to set up virtual functions for
+simple2drenderer.h
+********************************************/
 
 namespace prototype {
 	namespace graphics {

@@ -4,6 +4,8 @@
 #define SCENE_H
 
 //created by: Joshua Green
+//collaboration with: Noah Pena
+//this header file contains declarations for scene operations
 #include <list>
 #include <string>
 #include "GameObject.h"
@@ -46,12 +48,12 @@ public:
 	list<GameObject*>::iterator fullBeginIter;
 	list<GameObject*>::iterator graphicsIter;*/
 
-	list<GameObject> fullListOfObjects;
-	list<GameObject>::iterator fullBeginIter;
-	list<GameObject*> graphicsList;
-	list<GameObject*>::iterator graphicsIter;
-	list<GameObject>::iterator FullListGraphics;
-	list<GameObject>::iterator PlayerObjectIt;
+	list<GameObject> fullListOfObjects;//container for all objects in the scene
+	list<GameObject>::iterator fullBeginIter;//iterator for the above list
+	list<GameObject*> graphicsList;//pointer list to objects in the fulllistofobjects list
+	list<GameObject*>::iterator graphicsIter;//iterator for theabove
+	list<GameObject>::iterator FullListGraphics;//another iterator for the full list of objects, this is an independent iterator for graphics operations
+	list<GameObject>::iterator PlayerObjectIt;//player object iterator, keeps track of player object
 
 	Scene();
 	void RemoveAllObjects();

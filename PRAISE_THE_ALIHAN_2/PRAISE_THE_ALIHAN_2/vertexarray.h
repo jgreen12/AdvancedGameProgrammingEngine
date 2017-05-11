@@ -3,6 +3,14 @@
 #include <vector>
 #include <GL\glew.h>
 #include "buffer.h"
+/********************************************
+Author: Charles Miller
+vertexarray.h
+CPP file for header file indexbuffer.h meant to create a
+general vertex array with attributes defined by the
+programmer that then are binded to the array and then
+unbinded for access in buffer.
+********************************************/
 
 namespace prototype {
 	namespace graphics {

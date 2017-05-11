@@ -2,6 +2,14 @@
 #include "mathsFunc.h"
 #include "vec3.h"
 #include "vec4.h"
+/********************************************
+Author: Charles Miller
+mat4.h
+Header file meant to create a struct named mat4
+that holds 16 (four columns, four rows) elements plus
+linear algebra operations with the struct, including
+orthographic, perspective, translation, rotation, and scale.
+********************************************/
 
 namespace prototype {
 	namespace maths {

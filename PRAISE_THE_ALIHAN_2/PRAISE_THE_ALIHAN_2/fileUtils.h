@@ -1,5 +1,10 @@
 #pragma once
 #include <string>
+/********************************************
+Author: Charles Miller
+fileUtils.h
+Header file meant to open and read a file for the engine.
+********************************************/
 
 namespace prototype {
 	class FileUtils{

@@ -1,4 +1,11 @@
 #include "indexbuffer.h"
+/********************************************
+Author: Charles Miller
+simple2drenderer.h
+Header file meant to step through the m_RenderQueue
+to render multiple objects.
+********************************************/
+
 
 namespace prototype {
 	namespace graphics {

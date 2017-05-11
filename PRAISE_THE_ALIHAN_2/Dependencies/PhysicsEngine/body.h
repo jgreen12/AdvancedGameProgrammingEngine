@@ -7,6 +7,23 @@
 #include "vector.h"
 #include "Matrix3.h"
 #include "Quaternion.h"
+/********************************************
+Author: Noah Pena
+body.h
+Header file for the object body's [Inspector]
+information: mass(with gravity, inertia,
+density, shape descriptor, rotate, append), 
+position, rotation, quaternion, physics forces
+(torque, relative forces, relative torque,
+force at position, force at relative position,
+relative force at relative position), dynamic
+and kinematic physics, damping, angular speed,
+time, steps, number of joints, and if affected
+by gravity. 
+It also can create an object, sphere, box,
+plane,  capsule, or cylinder and get/create not only its
+object body but also its geometry as well.
+********************************************/
 
 
 enum Shape

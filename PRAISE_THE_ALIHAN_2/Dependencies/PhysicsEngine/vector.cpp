@@ -1,5 +1,16 @@
 #include "vector.h"
 
+/********************************************
+Author: Noah Pena
+vector.cpp
+CPP file for header file Vector.h for creating a 
+vector2/3 variable with dReal variables, being 
+creating with either three dReal variables or 
+copying another vector.
+Also for operations such as +, -, <, >, ==,
+!=, <=, >=, getting magnitude and converting
+to a vector2 or dVector3.
+********************************************/ 
 
 
 

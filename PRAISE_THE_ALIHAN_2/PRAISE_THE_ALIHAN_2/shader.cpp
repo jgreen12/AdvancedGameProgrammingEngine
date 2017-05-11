@@ -1,5 +1,14 @@
 #include "shader.h"
 
+/********************************************
+Author: Charles Miller
+shader.cpp
+CPP file for header file  shader.h to create shaders, set
+uniform variable values from either 1 variable or up to 4.
+Also to enable and disable the shaders.
+********************************************/
+
+
 
 namespace prototype {
 	namespace graphics {

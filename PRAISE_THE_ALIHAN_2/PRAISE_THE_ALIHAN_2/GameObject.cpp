@@ -32,18 +32,19 @@ void GameObject::initializeRenderable(prototype::maths::vec3 position, prototype
 	sprite = new prototype::graphics::Renderable2D(position, size, color, shader);
 }
 
+//much better and efficient version of the above function, initializes renderables for relevant objects
 void GameObject::initializeRenderable(prototype::graphics::Shader& shader) {
 	sprite = new prototype::graphics::Renderable2D(prototype::maths::vec3 (GetPosX(), GetPosY(), 0), size, color, shader);
 }
 	
-
+//overload operator for ==
 bool GameObject::operator== (const GameObject &g1) const {
 	return this->ID == g1.ID;
 }
 
 
 
-
+//converts physics data to render data
 float GameObject::RenderPassX() 
 {
 	return ((float)GetPosX());

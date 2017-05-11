@@ -1,5 +1,14 @@
 #include "buffer.h"
 
+/********************************************
+Author: Charles Miller
+buffer.cpp
+CPP file for header file buffer.h meant to create a buffer
+from creation, binding, data, and rebinding after data
+implementation and also to either bind or unbind it.
+********************************************/
+
+
 namespace prototype {
 	namespace graphics {
 		Buffer::Buffer(GLfloat* data, GLsizei count, GLuint componentCount) : m_ComponentCount(componentCount){

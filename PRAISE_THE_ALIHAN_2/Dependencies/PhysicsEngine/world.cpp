@@ -1,5 +1,14 @@
 #include "world.h"
 
+/********************************************
+Author: Noah Pena
+world.cpp
+CPP file for header file world.h for setting gravity, getting gravity,
+disabling/setting bodies, disabling/setting
+linear/angular thresholds, disable steps and time,
+set damping, angular speed, and velocity.  Also to use
+Space.h / Space.cpp to create a world space.
+********************************************/
 
 World::World(void)
 {

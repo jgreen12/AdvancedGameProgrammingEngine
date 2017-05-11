@@ -1,4 +1,11 @@
 #include "vec4.h"
+/********************************************
+Author: Charles Miller
+vec4.cpp
+CPP file for Header file vec4.h meant to create a struct
+named vec2 that holds 4 elements plus operations with
+the struct.
+********************************************/
 
 namespace prototype {
 	namespace maths {

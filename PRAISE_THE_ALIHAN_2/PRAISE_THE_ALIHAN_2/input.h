@@ -4,6 +4,14 @@
 #include <GLFW/glfw3.h>
 #include "window.h"
 #include <string>
+/********************************************
+Author: Charles Miller
+input.h
+Header file meant to find out if action buttons
+(up, down, left, right and jump button) are pressed or not
+according to set button string choices along with the axis
+choice pressed or not.
+********************************************/
 
 namespace prototype {
 	namespace graphics {

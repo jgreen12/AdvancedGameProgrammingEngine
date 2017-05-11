@@ -1,4 +1,11 @@
 #include "vec3.h"
+/********************************************
+Author: Charles Miller
+vec3.cpp
+CPP file for Header file vec3.h meant to create a struct
+named vec3 that holds 3 elements plus operations with
+the struct.
+********************************************/
 
 namespace prototype {
 	namespace maths {
